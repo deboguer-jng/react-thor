@@ -1,0 +1,18 @@
+.union {
+    position: static;
+    width: 563.73px;
+    height: 14.14px;
+    background: linear-gradient(90deg, rgba(222, 191, 112, 0) 0%, #DEBF70 85.52%, rgba(222, 191, 112, 0) 116.46%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 0px 24px;
+}
+
+.dashboard {
+    display: flex;
+    margin-left: 15px;
+    /* align-items: center; */
+    flex-direction: column;
+}

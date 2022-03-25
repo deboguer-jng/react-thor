@@ -1,35 +1,35 @@
-import React, { useContext } from 'react'
+import React from 'react';
 
-/// React router dom
-import { Routes, Route } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
-/// Css
-import './App.css'
-/// Layout
-import Layout from './components/Layout'
+// pages 
+import Dashboard from './screens/Dashboard';
+import Investment from './screens/Investments';
+import Nodes from './screens/Nodes';
 
-import Dashboard from './pages/Dashboard'
+import './App.css';
+
 
 const App = () => {
-  const routes = [{ url: '', component: Dashboard }]
-
   return (
-    <>
-      <Layout>
-        <div style={{ minHeight: window.screen.height - 60 }}>
-          <Routes>
-            {routes.map((data, i) => (
-              <Route
-                key={i}
-                path={`/${data.url}`}
-                element={<data.component />}
-              />
-            ))}
-          </Routes>
-        </div>
-      </Layout>
-    </>
-  )
+
+    <Router>
+
+      <Routes>
+
+        <Route element={<Dashboard />} path="/" />
+        <Route element={<Investment />} path="/investment" />
+        <Route element={<Nodes />} path="/nodes" />
+
+
+      </Routes>
+
+    </Router>
+  );
 }
 
-export default App
+export default App;
