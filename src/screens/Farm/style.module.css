@@ -1,0 +1,9 @@
+.inputStyle {
+  width: 100%;
+  background-color: #232631;
+  box-shadow: inset 0px 1px 4px #11141d;
+  border-radius: 12px;
+  padding: 15px  70px 15px 20px;
+  border: transparent;
+  color: white;
+}

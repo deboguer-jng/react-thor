@@ -10,6 +10,8 @@ import {
 import Dashboard from './screens/Dashboard';
 import Investment from './screens/Investments';
 import Nodes from './screens/Nodes';
+import Farm from './screens/Farm';
+import Faq from './screens/Faq';
 
 import './App.css';
 
@@ -24,6 +26,8 @@ const App = () => {
         <Route element={<Dashboard />} path="/" />
         <Route element={<Investment />} path="/investment" />
         <Route element={<Nodes />} path="/nodes" />
+        <Route element={<Farm />} path="/farm" />
+        <Route element={<Faq />} path="/faq" />
 
 
       </Routes>

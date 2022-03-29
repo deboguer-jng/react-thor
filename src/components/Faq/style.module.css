@@ -1,0 +1,10 @@
+.searchInput {
+  width: 100%;
+  background: #232631;
+  box-shadow: inset 0px 1px 4px #11141d;
+  border-radius: 20px;
+  color: white;
+  padding: 15px 50px 15px 20px;
+  border: transparent;
+}
+

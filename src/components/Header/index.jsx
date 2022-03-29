@@ -9,6 +9,7 @@ import Logo from "../Logo";
 
 const Header = () => {
   const [state, setState] = useState(false);
+  const [activeTab, setActiveTab] = useState(0);
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -38,7 +39,6 @@ const Header = () => {
           sx={{
             borderRadius: 10,
             width: "100%",
-            // paddingY: "15px",
           }}
         >
           DASHBOARD
@@ -83,8 +83,52 @@ const Header = () => {
         >
           {list()}
         </Drawer>
-        <Box display={{ xs: "none", sm: "none", md: "block" }}>
-          <Box
+
+        <Box
+          sx={{
+            border: "1px solid white",
+            backgroundColor: "#171B24",
+            borderRadius: "21px",
+            overflow: "hidden",
+          }}
+          display={{ xs: "none", sm: "none", md: "block" }}
+        >
+          {activeTab === 0 ? (
+            <Button
+              sx={{
+                ":hover": {
+                  color: "white",
+                },
+                backgroundColor: "white",
+                color: "black",
+                borderRadius: "21px",
+              }}
+            >
+              34.712 THOR | 34.712 AVAX
+            </Button>
+          ) : (
+            <Button onClick={() => setActiveTab(0)}>
+              34.712 THOR | 34.712 AVAX
+            </Button>
+          )}
+          {activeTab === 1 ? (
+            <Button
+              sx={{
+                ":hover": {
+                  color: "white",
+                },
+                backgroundColor: "white",
+                color: "black",
+                borderRadius: "21px",
+              }}
+            >
+              0x1051..AgD2
+            </Button>
+          ) : (
+            <Button onClick={() => setActiveTab(1)}>0x1051..AgD2</Button>
+          )}
+
+          {/* <Box
             sx={{
               width: "auto",
               height: "50px",
@@ -109,7 +153,7 @@ const Header = () => {
               34.712 THOR | 34.712 AVAX
             </Box>
             <Box sx={{ paddingX: 2 }}>0x1051..AgD2</Box>
-          </Box>
+          </Box> */}
         </Box>
       </Box>
     </Box>

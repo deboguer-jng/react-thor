@@ -5,7 +5,6 @@ import {
   Box,
   Button,
   Typography,
-  IconButton,
   Table,
   TableBody,
   TableCell,
@@ -16,10 +15,14 @@ import {
   FormControl,
   InputLabel,
   NativeSelect,
+  Tooltip,
 } from "@mui/material";
 
 import imgAvax from "../../assets/images/avax.png";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import CustomButton from "../CustomButton";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+
+import ScrollArea from "react-scrollbar";
 
 const InvestTable = () => {
   return (
@@ -81,156 +84,90 @@ const InvestTable = () => {
           </Box>
         </Box>
       </Box>
-      <TableContainer
-        component={Paper}
-        style={{ backgroundColor: "transparent", borderRadius: "12px" }}
+
+      <ScrollArea
+        speed={0.8}
+        contentClassName="content"
+        horizontal={false}
+        style={{ height: "40vh" }}
       >
-        <Table
-          style={{
+        <TableContainer
+          component={Paper}
+          sx={{
             background:
               "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.48)",
           }}
-          sx={{
-            minWidth: 700,
-          }}
-          aria-label="simple table"
+          style={{ backgroundColor: "transparent", borderRadius: "12px" }}
         >
-          <TableHead>
-            <TableRow sx={{}}>
-              <TableCell
-                sx={{
-                  fontWeight: "500",
-                  color: "rgba(151,155,172,0.5)",
-                  fontFamily: "Kanit",
-                }}
-              >
-                Name
-              </TableCell>
-              <TableCell
-                sx={{
-                  fontWeight: 500,
-                  fontFamily: "Kanit",
-                  color: "rgba(151,155,172,0.5)",
-                }}
-              >
-                Warrior
-              </TableCell>
-              <TableCell
-                sx={{
-                  fontWeight: 500,
-                  color: "rgba(151,155,172,0.5)",
-                  fontFamily: "Kanit",
-                }}
-              >
-                Date/Time
-              </TableCell>
-              <TableCell
-                sx={{
-                  fontWeight: 500,
-                  fontFamily: "Kanit",
-                  color: "rgba(151,155,172,0.5)",
-                }}
-              >
-                Rewards
-              </TableCell>
-              <TableCell
-                sx={{
-                  fontWeight: 500,
-                  fontFamily: "Kanit",
-                  color: "rgba(151,155,172,0.5)",
-                }}
-              >
-                Status
-              </TableCell>
-              <TableCell
-                sx={{
-                  fontWeight: 500,
-                  fontFamily: "Kanit",
-                  color: "rgba(151,155,172,0.5)",
-                }}
-              >
-                RPC
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableCell>
-                <Typography
-                  variant="subtitle1"
-                  component="div"
+          <Table
+            sx={{
+              minWidth: 700,
+            }}
+            aria-label="simple table"
+          >
+            <TableHead>
+              <TableRow>
+                <TableCell
                   sx={{
-                    color: "white",
+                    fontWeight: "500",
+                    color: "rgba(151,155,172,0.5)",
                     fontFamily: "Kanit",
-                    fontWeight: 300,
                   }}
                 >
-                  galaxy2012
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Box display="flex" alignItems={"center"}>
-                  <Box>
-                    <img src={imgAvax} alt="AVAX" width={30} />
-                  </Box>
-                  <Box marginLeft={2}>
-                    <Typography
-                      variant="subtitle1"
-                      component="div"
-                      sx={{
-                        color: "white",
-                        fontFamily: "Trojan",
-                        fontWeight: 400,
-                      }}
-                    >
-                      ODIN
-                    </Typography>
-                  </Box>
-                </Box>
-              </TableCell>
-              <TableCell>
-                <Typography
-                  variant="subtitle1"
-                  component="div"
+                  Name
+                </TableCell>
+                <TableCell
                   sx={{
-                    color: "white",
+                    fontWeight: 500,
                     fontFamily: "Kanit",
-                    fontWeight: 300,
+                    color: "rgba(151,155,172,0.5)",
                   }}
                 >
-                  12/27/21, 8:55 AM
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Typography
-                  variant="subtitle1"
-                  component="div"
+                  Warrior
+                </TableCell>
+                <TableCell
                   sx={{
-                    color: "#48BB78",
+                    fontWeight: 500,
+                    color: "rgba(151,155,172,0.5)",
                     fontFamily: "Kanit",
-                    fontWeight: 300,
                   }}
                 >
-                  .196
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Typography
-                  variant="subtitle1"
-                  component="div"
+                  Date/Time
+                </TableCell>
+                <TableCell
                   sx={{
-                    color: "white",
+                    fontWeight: 500,
                     fontFamily: "Kanit",
-                    fontWeight: 300,
+                    color: "rgba(151,155,172,0.5)",
                   }}
                 >
-                  15 DAYS LEFT
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Box display={"flex"} alignItems="center">
-                  <Box>
+                  Rewards
+                </TableCell>
+                <TableCell
+                  sx={{
+                    fontWeight: 500,
+                    fontFamily: "Kanit",
+                    color: "rgba(151,155,172,0.5)",
+                  }}
+                >
+                  Status
+                </TableCell>
+                <TableCell
+                  sx={{
+                    fontWeight: 500,
+                    fontFamily: "Kanit",
+                    color: "rgba(151,155,172,0.5)",
+                  }}
+                >
+                  RPC
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {[1, 2, 3, 4, 5, 6, 7].map((v) => (
+                <TableRow>
+                  <TableCell>
                     <Typography
                       variant="subtitle1"
                       component="div"
@@ -238,138 +175,135 @@ const InvestTable = () => {
                         color: "white",
                         fontFamily: "Kanit",
                         fontWeight: 300,
-                        marginTop: -1,
                       }}
                     >
-                      69,024.9592
+                      galaxy2012
                     </Typography>
-                  </Box>
+                  </TableCell>
+                  <TableCell>
+                    <Box display="flex" alignItems={"center"}>
+                      <Box>
+                        <img src={imgAvax} alt="AVAX" width={30} />
+                      </Box>
+                      <Box marginLeft={2}>
+                        <Typography
+                          variant="subtitle1"
+                          component="div"
+                          sx={{
+                            color: "white",
+                            fontFamily: "Trojan",
+                            fontWeight: 400,
+                          }}
+                        >
+                          ODIN
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="subtitle1"
+                      component="div"
+                      sx={{
+                        color: "white",
+                        fontFamily: "Kanit",
+                        fontWeight: 300,
+                      }}
+                    >
+                      12/27/21, 8:55 AM
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography
+                      variant="subtitle1"
+                      component="div"
+                      sx={{
+                        color: "#fff",
+                        fontFamily: "Kanit",
+                        fontWeight: 300,
+                      }}
+                    >
+                      .196
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Box display={"flex"} alignItems="center">
+                      <Box
+                        sx={{
+                          width: "10px",
+                          height: "10px",
+                          backgroundColor: "#32B267",
+                          borderRadius: "50%",
+                        }}
+                      ></Box>
+                      <Typography
+                        variant="subtitle3"
+                        component="div"
+                        sx={{
+                          color: "white",
+                          fontFamily: "Kanit",
+                          fontWeight: 300,
+                          marginLeft: 1,
+                        }}
+                      >
+                        15 DAYS LEFT
+                      </Typography>
+                    </Box>
+                  </TableCell>
+                  <TableCell>
+                    <Box display={"flex"} alignItems="center">
+                      <Tooltip
+                        title={"lorlskdjaksldjasdjasdlkasjdkasdklasdlkasdlakd"}
+                      >
+                        <Box
+                          sx={{
+                            width: "54px",
+                            height: "32px",
+                            border: "0.5px solid rgba(255, 255, 255, 0.3)",
+                            padding: "5px",
+                            borderRadius: "16px",
+                            filter:
+                              "drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.32));",
+                            display: "flex",
+                            alignItems: "center",
+                          }}
+                        >
+                          <img
+                            src={imgAvax}
+                            alt="AVAX"
+                            width={"24px"}
+                            height={"24px"}
+                          />
+                          <Box marginLeft={"3px"} marginTop="5px">
+                            <MdOutlineKeyboardArrowDown
+                              fontSize={"18px"}
+                              color="white"
+                            />
+                          </Box>
+                        </Box>
+                      </Tooltip>
 
-                  <Box marginLeft={2}>
-                    <IconButton aria-label="dots" sx={{ color: "white" }}>
-                      <BsThreeDotsVertical />
-                    </IconButton>
-                  </Box>
-                </Box>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <Box display={"flex"} alignItems="center">
-                  <Box>
-                    <img src={imgAvax} alt="AVAX" />
-                  </Box>
-                  <Box marginLeft={"10px"}>
-                    <Typography
-                      variant="subtitle1"
-                      component="div"
-                      sx={{
-                        color: "white",
-                        fontFamily: "Kanit",
-                        fontWeight: 500,
-                      }}
-                    >
-                      Avalanche
-                    </Typography>
-                    <Typography
-                      variant="subtitle1"
-                      component="div"
-                      sx={{
-                        color: "white",
-                        fontFamily: "Kanit",
-                        fontWeight: 300,
-                        marginTop: -1,
-                      }}
-                    >
-                      AVAX
-                    </Typography>
-                  </Box>
-                </Box>
-              </TableCell>
-              <TableCell>
-                <Typography
-                  variant="subtitle1"
-                  component="div"
-                  sx={{
-                    color: "white",
-                    fontFamily: "Kanit",
-                    fontWeight: 300,
-                    marginTop: -1,
-                  }}
-                >
-                  $76.00
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Typography
-                  variant="subtitle1"
-                  component="div"
-                  sx={{
-                    color: "white",
-                    fontFamily: "Kanit",
-                    fontWeight: 300,
-                    marginTop: -1,
-                  }}
-                >
-                  2.11%
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Typography
-                  variant="subtitle1"
-                  component="div"
-                  sx={{
-                    color: "#48BB78",
-                    fontFamily: "Kanit",
-                    fontWeight: 300,
-                    marginTop: -1,
-                  }}
-                >
-                  $10,000
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Typography
-                  variant="subtitle1"
-                  component="div"
-                  sx={{
-                    color: "white",
-                    fontFamily: "Kanit",
-                    fontWeight: 300,
-                    marginTop: -1,
-                  }}
-                >
-                  69,024.9592
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Box display={"flex"} alignItems="center">
-                  <Box>
-                    <Typography
-                      variant="subtitle1"
-                      component="div"
-                      sx={{
-                        color: "white",
-                        fontFamily: "Kanit",
-                        fontWeight: 300,
-                        marginTop: -1,
-                      }}
-                    >
-                      69,024.9592
-                    </Typography>
-                  </Box>
+                      <Box marginLeft={2}>
+                        <CustomButton label="claim" />
+                      </Box>
 
-                  <Box marginLeft={2}>
-                    <IconButton aria-label="dots" sx={{ color: "white" }}>
-                      <BsThreeDotsVertical />
-                    </IconButton>
-                  </Box>
-                </Box>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
+                      <Box marginLeft={2}>
+                        <Button
+                          variant="outlined"
+                          sx={{ borderRadius: "20px" }}
+                          size="small"
+                        >
+                          pay fee
+                        </Button>
+                      </Box>
+                    </Box>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </ScrollArea>
     </Container>
   );
 };
