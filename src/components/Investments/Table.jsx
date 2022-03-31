@@ -1,5 +1,4 @@
-import React from "react";
-
+import React from 'react';
 import {
   Container,
   Box,
@@ -12,33 +11,29 @@ import {
   TableHead,
   TableRow,
   Paper,
-} from "@mui/material";
-
-import imgAvax from "../../assets/images/avax.png";
-import { BsThreeDotsVertical } from "react-icons/bs";
-
-import { IoMdArrowDropdown } from "react-icons/io";
-
-import ScrollArea from "react-scrollbar";
+} from '@mui/material';
+import imgAvax from '../../assets/images/avax.png';
+import { BsThreeDotsVertical } from 'react-icons/bs';
+import ScrollArea from 'react-scrollbar';
 
 const InvestTable = () => {
   return (
-    <Container maxWidth="lg" sx={{ marginBottom: 4 }}>
+    <Container maxWidth="xl" sx={{ marginBottom: 4 }}>
       <ScrollArea
         speed={0.8}
         contentClassName="content"
         horizontal={false}
-        style={{ height: "40vh" }}
+        style={{ height: '40vh' }}
       >
         <TableContainer
           component={Paper}
-          style={{ backgroundColor: "transparent", borderRadius: "12px" }}
+          style={{ backgroundColor: 'transparent', borderRadius: '12px' }}
         >
           <Table
             style={{
               background:
-                "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
-              boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.48)",
+                'linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)',
+              boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.48)',
             }}
             sx={{
               minWidth: 700,
@@ -49,9 +44,9 @@ const InvestTable = () => {
               <TableRow sx={{}}>
                 <TableCell
                   sx={{
-                    fontWeight: "500",
-                    color: "rgba(151,155,172,0.5)",
-                    fontFamily: "Kanit",
+                    fontWeight: '500',
+                    color: 'rgba(151,155,172,0.5)',
+                    fontFamily: 'Kanit',
                   }}
                 >
                   Name
@@ -59,8 +54,8 @@ const InvestTable = () => {
                 <TableCell
                   sx={{
                     fontWeight: 500,
-                    fontFamily: "Kanit",
-                    color: "rgba(151,155,172,0.5)",
+                    fontFamily: 'Kanit',
+                    color: 'rgba(151,155,172,0.5)',
                   }}
                 >
                   Price
@@ -68,8 +63,8 @@ const InvestTable = () => {
                 <TableCell
                   sx={{
                     fontWeight: 500,
-                    color: "rgba(151,155,172,0.5)",
-                    fontFamily: "Kanit",
+                    color: 'rgba(151,155,172,0.5)',
+                    fontFamily: 'Kanit',
                   }}
                 >
                   Change
@@ -77,8 +72,8 @@ const InvestTable = () => {
                 <TableCell
                   sx={{
                     fontWeight: 500,
-                    fontFamily: "Kanit",
-                    color: "rgba(151,155,172,0.5)",
+                    fontFamily: 'Kanit',
+                    color: 'rgba(151,155,172,0.5)',
                   }}
                 >
                   P/L
@@ -86,8 +81,8 @@ const InvestTable = () => {
                 <TableCell
                   sx={{
                     fontWeight: 500,
-                    fontFamily: "Kanit",
-                    color: "rgba(151,155,172,0.5)",
+                    fontFamily: 'Kanit',
+                    color: 'rgba(151,155,172,0.5)',
                   }}
                 >
                   Balance
@@ -95,8 +90,8 @@ const InvestTable = () => {
                 <TableCell
                   sx={{
                     fontWeight: 500,
-                    fontFamily: "Kanit",
-                    color: "rgba(151,155,172,0.5)",
+                    fontFamily: 'Kanit',
+                    color: 'rgba(151,155,172,0.5)',
                   }}
                 >
                   Value
@@ -107,17 +102,17 @@ const InvestTable = () => {
               {[0, 1, 2, 3, 4].map((v, i) => (
                 <TableRow>
                   <TableCell>
-                    <Box display={"flex"} alignItems="center">
+                    <Box display={'flex'} alignItems="center">
                       <Box>
                         <img src={imgAvax} alt="AVAX" />
                       </Box>
-                      <Box marginLeft={"10px"}>
+                      <Box marginLeft={'10px'}>
                         <Typography
                           variant="subtitle1"
                           component="div"
                           sx={{
-                            color: "white",
-                            fontFamily: "Kanit",
+                            color: 'white',
+                            fontFamily: 'Kanit',
                             fontWeight: 500,
                           }}
                         >
@@ -127,8 +122,8 @@ const InvestTable = () => {
                           variant="subtitle1"
                           component="div"
                           sx={{
-                            color: "white",
-                            fontFamily: "Kanit",
+                            color: 'white',
+                            fontFamily: 'Kanit',
                             fontWeight: 300,
                             marginTop: -1,
                           }}
@@ -143,8 +138,8 @@ const InvestTable = () => {
                       variant="subtitle1"
                       component="div"
                       sx={{
-                        color: "white",
-                        fontFamily: "Kanit",
+                        color: 'white',
+                        fontFamily: 'Kanit',
                         fontWeight: 300,
                         marginTop: -1,
                       }}
@@ -157,8 +152,8 @@ const InvestTable = () => {
                       variant="subtitle1"
                       component="div"
                       sx={{
-                        color: "white",
-                        fontFamily: "Kanit",
+                        color: 'white',
+                        fontFamily: 'Kanit',
                         fontWeight: 300,
                         marginTop: -1,
                       }}
@@ -171,8 +166,8 @@ const InvestTable = () => {
                       variant="subtitle1"
                       component="div"
                       sx={{
-                        color: "#48BB78",
-                        fontFamily: "Kanit",
+                        color: '#48BB78',
+                        fontFamily: 'Kanit',
                         fontWeight: 300,
                         marginTop: -1,
                       }}
@@ -185,8 +180,8 @@ const InvestTable = () => {
                       variant="subtitle1"
                       component="div"
                       sx={{
-                        color: "white",
-                        fontFamily: "Kanit",
+                        color: 'white',
+                        fontFamily: 'Kanit',
                         fontWeight: 300,
                         marginTop: -1,
                       }}
@@ -195,14 +190,14 @@ const InvestTable = () => {
                     </Typography>
                   </TableCell>
                   <TableCell>
-                    <Box display={"flex"} alignItems="center">
+                    <Box display={'flex'} alignItems="center">
                       <Box>
                         <Typography
                           variant="subtitle1"
                           component="div"
                           sx={{
-                            color: "white",
-                            fontFamily: "Kanit",
+                            color: 'white',
+                            fontFamily: 'Kanit',
                             fontWeight: 300,
                             marginTop: -1,
                           }}
@@ -212,7 +207,7 @@ const InvestTable = () => {
                       </Box>
 
                       <Box marginLeft={6}>
-                        <IconButton aria-label="dots" sx={{ color: "white" }}>
+                        <IconButton aria-label="dots" sx={{ color: 'white' }}>
                           <BsThreeDotsVertical />
                         </IconButton>
                       </Box>

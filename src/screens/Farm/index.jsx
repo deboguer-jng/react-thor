@@ -1,74 +1,69 @@
-import React, { useState } from "react";
-
-import { Container, Box, Typography, Button, Grid } from "@mui/material";
-
-import Layout from "../../components/Layout";
-import Heading from "../../components/Heading";
-import HeadCard from "../../components/Farm/HeadCard";
-
-import imgThor from "../../assets/images/LeftBar/Bitmap.png";
-
-import { IoIosArrowDown } from "react-icons/io";
-
-import styles from "./style.module.css";
+import React, { useState } from 'react';
+import { Container, Box, Typography, Button, Grid } from '@mui/material';
+import Layout from '../../components/Layout';
+import Heading from '../../components/Heading';
+import HeadCard from '../../components/Farm/HeadCard';
+import imgThor from '../../assets/images/LeftBar/Bitmap.png';
+import { IoIosArrowDown } from 'react-icons/io';
+import styles from './style.module.css';
 
 const Farm = () => {
   const [active, setActive] = useState(1);
   return (
     <Layout>
-      <Heading title={"farm"} />
-      <Container maxWidth="lg">
+      <Heading title={'farm'} />
+      <Container maxWidth="xl">
         <HeadCard />
         <Box
           marginTop={4}
           sx={{
             background:
-              "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
-            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.48)",
-            borderRadius: "10px",
+              'linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)',
+            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.48)',
+            borderRadius: '10px',
             padding: 4,
           }}
         >
           <Container maxWidth="sm">
-            <Box maxWidth={"250px"} sx={{ marginX: "auto" }}>
+            <Box maxWidth={'250px'} sx={{ marginX: 'auto' }}>
               <Typography
                 marginLeft={2}
                 variant="subtitle1"
                 sx={{
-                  fontFamily: "Kanit",
-                  color: "white",
+                  fontFamily: 'Kanit',
+                  color: 'white',
                   opacity: 0.5,
-                  textAlign: "center",
+                  textAlign: 'center',
                 }}
               >
                 Select type
               </Typography>
 
               <Box
-                display={"flex"}
+                display={'flex'}
                 justifyContent="space-between"
-                alignItems={"center"}
+                alignItems={'center'}
                 sx={{
-                  border: "1px solid rgba(255, 255, 255, 0.4)",
-                  borderRadius: "48px",
-                  paddingX: "10px",
-                  paddingY: "5px",
+                  border: '1px solid rgba(255, 255, 255, 0.4)',
+                  borderRadius: '48px',
+                  paddingX: '10px',
+                  paddingY: '5px',
                 }}
               >
                 <Box display="flex" alignItems="center">
                   <img
                     src={imgThor}
                     alt="hammer"
-                    style={{ marginTop: "3px" }}
-                    width={""}
+                    style={{ marginTop: '3px' }}
+                    width={''}
                     height={40}
                   />
                   <Typography
                     marginLeft={1}
                     variant="subtitle1"
                     sx={{
-                      fontFamily: "Kanit",
-                      color: "white",
+                      fontFamily: 'Kanit',
+                      color: 'white',
                     }}
                   >
                     THOR
@@ -80,16 +75,16 @@ const Farm = () => {
               </Box>
             </Box>
             <Box
-              display={"flex"}
+              display={'flex'}
               justifyContent="space-between"
-              flexDirection={{ xs: "column", sm: "row" }}
+              flexDirection={{ xs: 'column', sm: 'row' }}
               marginTop={4}
             >
               <Box>
                 <Typography
                   marginLeft={2}
                   variant="h4"
-                  sx={{ fontFamily: "Kanit", color: "white", opacity: 0.5 }}
+                  sx={{ fontFamily: 'Kanit', color: 'white', opacity: 0.5 }}
                 >
                   Stacked USD
                 </Typography>
@@ -99,14 +94,14 @@ const Farm = () => {
                   gutterBottom
                   sx={{
                     background:
-                      "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
-                    fontFamily: "Kanit",
-                    backgroundClip: "text",
-                    WebkitBackgroundClip: "text",
-                    textFillColor: "transparent",
-                    fontStyle: "normal",
-                    WebkitTextFillColor: "transparent",
-                    fontWeight: "bold",
+                      'linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);',
+                    fontFamily: 'Kanit',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    textFillColor: 'transparent',
+                    fontStyle: 'normal',
+                    WebkitTextFillColor: 'transparent',
+                    fontWeight: 'bold',
                   }}
                 >
                   $6.7M
@@ -116,7 +111,7 @@ const Farm = () => {
                 <Typography
                   marginLeft={2}
                   variant="h4"
-                  sx={{ fontFamily: "Kanit", color: "white", opacity: 0.5 }}
+                  sx={{ fontFamily: 'Kanit', color: 'white', opacity: 0.5 }}
                 >
                   APR
                 </Typography>
@@ -126,14 +121,14 @@ const Farm = () => {
                   gutterBottom
                   sx={{
                     background:
-                      "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
-                    fontFamily: "Kanit",
-                    backgroundClip: "text",
-                    WebkitBackgroundClip: "text",
-                    textFillColor: "transparent",
-                    fontStyle: "normal",
-                    WebkitTextFillColor: "transparent",
-                    fontWeight: "bold",
+                      'linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);',
+                    fontFamily: 'Kanit',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    textFillColor: 'transparent',
+                    fontStyle: 'normal',
+                    WebkitTextFillColor: 'transparent',
+                    fontWeight: 'bold',
                   }}
                 >
                   390%
@@ -143,13 +138,13 @@ const Farm = () => {
 
             <Box marginTop={4}>
               <Box
-                maxWidth={"300px"}
+                maxWidth={'300px'}
                 sx={{
-                  border: "1px solid #5C5C5C",
-                  borderRadius: "48px",
-                  overflowX: "hidden",
-                  display: "flex",
-                  marginX: "auto",
+                  border: '1px solid #5C5C5C',
+                  borderRadius: '48px',
+                  overflowX: 'hidden',
+                  display: 'flex',
+                  marginX: 'auto',
                 }}
               >
                 <Box flex={1}>
@@ -158,10 +153,10 @@ const Farm = () => {
                       variant="contained"
                       fullWidth
                       sx={{
-                        borderRadius: "48px",
+                        borderRadius: '48px',
                         background:
-                          "linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)",
-                        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.64)",
+                          'linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)',
+                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.64)',
                       }}
                     >
                       deposit
@@ -170,7 +165,7 @@ const Farm = () => {
                     <Button
                       variant="text"
                       fullWidth
-                      sx={{ color: "white" }}
+                      sx={{ color: 'white' }}
                       onClick={() => setActive(1)}
                     >
                       deposit
@@ -183,10 +178,10 @@ const Farm = () => {
                       variant="contained"
                       fullWidth
                       sx={{
-                        borderRadius: "48px",
+                        borderRadius: '48px',
                         background:
-                          "linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)",
-                        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.64)",
+                          'linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)',
+                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.64)',
                       }}
                     >
                       withdraw
@@ -195,7 +190,7 @@ const Farm = () => {
                     <Button
                       variant="text"
                       fullWidth
-                      sx={{ color: "white" }}
+                      sx={{ color: 'white' }}
                       onClick={() => setActive(2)}
                     >
                       withdraw
@@ -212,13 +207,13 @@ const Farm = () => {
                   className={styles.inputStyle}
                   placeholder="Enter amount..."
                 />
-                <Box position={"absolute"} top={"35%"} right={"3%"}>
+                <Box position={'absolute'} top={'35%'} right={'3%'}>
                   <Typography
                     variant="body2"
                     sx={{
-                      color: "white",
-                      fontWeight: "bold",
-                      fontFamily: "Kanit",
+                      color: 'white',
+                      fontWeight: 'bold',
+                      fontFamily: 'Kanit',
                     }}
                   >
                     MAX
@@ -226,10 +221,10 @@ const Farm = () => {
                   <Typography
                     variant="body2"
                     sx={{
-                      color: "white",
+                      color: 'white',
                       opacity: 0.5,
-                      fontFamily: "Kanit",
-                      marginTop: "-3px",
+                      fontFamily: 'Kanit',
+                      marginTop: '-3px',
                     }}
                   >
                     40.00
@@ -240,11 +235,11 @@ const Farm = () => {
                 <Button
                   variant="outlined"
                   sx={{
-                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.48)",
-                    borderRadius: "48px",
-                    paddingY: "10px",
-                    borderColor: "white",
-                    color: "white",
+                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.48)',
+                    borderRadius: '48px',
+                    paddingY: '10px',
+                    borderColor: 'white',
+                    color: 'white',
                   }}
                   fullWidth
                 >
