@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Drawer, Box } from '@mui/material';
+import { Drawer, Box, useMediaQuery } from '@mui/material';
 import { MenuDrawerItem } from './MenuDrawerItem';
 import imgNode from '../../../assets/images/nodes.png';
 import imgInvestment from '../../../assets/images/investment.png';
@@ -48,6 +48,8 @@ export function MenuDrawer() {
     <img alt="drawerIcon" src={imgStack} width={'20px'} />,
     <img alt="drawerIcon" src={imgBubble} width={'20px'} />,
   ];
+  const mobileCardView = useMediaQuery('(max-width:500px)');
+
   return (
     <Box display="flex">
       <Drawer
@@ -57,7 +59,7 @@ export function MenuDrawer() {
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
             width: isOpen ? 208 : 69,
-            marginLeft: '88px',
+            marginLeft: mobileCardView ? '0px' : '88px',
             background: 'rgba(13, 16, 27, 0.65)',
           },
         }}

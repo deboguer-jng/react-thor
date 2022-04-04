@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 
-const CustomButton = ({ label }) => {
+const CustomButton = ({ label, ...props }) => {
   return (
     <Button
       sx={{
@@ -11,6 +11,7 @@ const CustomButton = ({ label }) => {
       }}
       size="small"
       variant="contained"
+      {...props}
     >
       {label}
     </Button>

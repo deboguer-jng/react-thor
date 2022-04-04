@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
 import Header from '../Header';
 import { LeftSideBar } from './../LeftSidebar';
 import bgImage from '../../assets/images/bg-img.png';
-import ScrollArea from 'react-scrollbar';
 
 const Layout = ({ children }) => {
+  const mobileCardView = useMediaQuery('(max-width:500px)');
   return (
     <Box
       sx={{
@@ -19,19 +19,19 @@ const Layout = ({ children }) => {
       }}
     >
       <LeftSideBar />
-      <Box sx={{ marginLeft: 15, width: '100%' }}>
+      <Box sx={{ marginLeft: mobileCardView ? 0 : 15, width: '100%' }}>
         <Header />
-        <Box height={'85vh'}>
-          <ScrollArea
-            speed={0.8}
-            contentClassName="content"
-            horizontal={false}
-            style={{ height: '100%' }}
+
+        <Box height={'80vh'}>
+          <Box
+            paddingX={mobileCardView ? 0 : 4}
+            // marginBottom={4}
+            sx={{ maxHeight: '100%', overflowY: 'scroll' }}
           >
             <Box paddingX={4} marginBottom={4}>
               {children}
             </Box>
-          </ScrollArea>
+          </Box>
         </Box>
       </Box>
     </Box>

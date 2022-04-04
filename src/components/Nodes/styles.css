@@ -1,0 +1,47 @@
+.nspidercard {
+  border-radius: 12px;
+  width: 100%;
+  height: 174px;
+  width: 129px;
+}
+
+.naction {
+  display: none;
+}
+.nactionhovered {
+  display: block;
+  width: 129px;
+  background: #3751f6;
+  border-bottom-left-radius: 11px;
+  border-bottom-right-radius: 11px;
+  z-index: -99999 !important;
+  color: #fff;
+  transform: translateY(146px);
+  transition-duration: 200ms;
+  transition-delay: 200ms;
+  text-align: center;
+  min-height: 50px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  z-index: 99999999 !important;
+  padding-bottom: -20px;
+}
+.nspidercardhover {
+  transform: translateY(-60px);
+  transition-duration: 200ms;
+  background: linear-gradient(0deg, #141726, #141726), rgba(17, 20, 29, 0.4);
+  z-index: 999999 !important;
+  border-radius: 12px !important;
+  height: 174px;
+  width: 129px;
+}
+.collectBtn {
+  font-size: 10px;
+  font-weight: 500;
+  font-family: Kanit;
+  /* display: flex; */
+  /* flex-direction: column;x */
+  /* justify-content: flex-end; */
+  /* min-height: 40px; */
+}
