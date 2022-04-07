@@ -1,0 +1,131 @@
+/* .cardBox {
+  cursor: pointer;
+}
+
+.cardBox:hover {
+  background-color: red;
+} */
+
+.mainContainer {
+  position: relative;
+}
+
+.boxContainer {
+  position: relative;
+  text-align: center;
+  filter: brightness(50%);
+  transition: all 0.5s;
+  /* filter: drop-shadow(0px 12px 14px rgba(0, 0, 0, 0.64))
+    drop-shadow(0px -1px 32px rgba(222, 191, 112, 0.1)); */
+}
+
+.boxContainerCollapse {
+  float: left;
+  position: absolute;
+}
+
+.childContainer {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 170px;
+  display: none;
+  transform: all 0.5s;
+}
+
+.btnContainer:hover {
+  margin-top: -40px;
+}
+
+.btnContainer:hover + .childContainer {
+  top: 100%;
+  display: flex;
+}
+
+.boxContainer:hover img {
+  width: 189px;
+  height: 265px;
+}
+
+.boxContainer:hover {
+  filter: brightness(100%);
+}
+
+.btnContainer:hover ~ .boxContainer {
+  display: none;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.64))
+    drop-shadow(0px -1px 32px rgba(222, 191, 112, 0.1));
+}
+
+/* .boxContainer img {
+  z-index: 10;
+} */
+
+.boxImage {
+  position: absolute;
+  top: 70%;
+  left: 15%;
+  width: 70%;
+  display: none;
+}
+
+.btnBox:hover .boxContainer {
+  margin-top: -20px;
+}
+
+/* --------------- */
+
+.mainContainer {
+  position: relative;
+  width: 100%;
+  /* overflow: hidden; */
+}
+
+.child1 {
+  width: 20%;
+  transition: width 0.6s;
+  /* overflow-x: hidden; */
+}
+
+.mainChild {
+  background-color: red;
+  transition: all 0.5s;
+}
+
+.child2Active {
+  position: absolute;
+  width: 80%;
+  top: 0;
+  right: 0%;
+  color: white;
+}
+
+.child2Inactive {
+  position: absolute;
+  top: 0;
+  right: -90%;
+  background-color: red;
+  /* transform: all 0.5s; */
+}
+
+/* .child2 {
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  right: -200%;
+  background-color: red;
+  transition: all 0.6s;
+}
+
+.mainContainer:active .child2 {
+  width: 80%;
+  right: 0;
+}
+
+.mainContainer:active .child1 {
+  width: 20%;
+} */

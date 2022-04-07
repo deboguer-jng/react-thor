@@ -1,37 +1,46 @@
-import React from 'react';
-import { Box, useMediaQuery } from '@mui/material';
-import Header from '../Header';
-import { LeftSideBar } from './../LeftSidebar';
-import bgImage from '../../assets/images/bg-img.png';
+import React, { useState } from "react";
+
+import { Box, Container } from "@mui/material";
+
+// Components
+import Header from "../Header";
+import LeftSideBar from "../LeftSidebar";
+
+// Images
+import bgImage from "../../assets/images/bg-img.png";
+
+import ScrollArea from "react-scrollbar";
 
 const Layout = ({ children }) => {
-  const mobileCardView = useMediaQuery('(max-width:500px)');
   return (
     <Box
       sx={{
-        width: '100%',
-        display: 'flex',
+        width: "100%",
+        // height: '100vh',
+        display: "flex",
         backgroundImage: `url(${bgImage})`,
-        backgroundSize: '100% 100%',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        overflowY: 'hidden',
+        backgroundSize: "100% 100%",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        overflowY: "hidden",
       }}
     >
       <LeftSideBar />
-      <Box sx={{ marginLeft: mobileCardView ? 0 : 15, width: '100%' }}>
-        <Header />
-
-        <Box height={'80vh'}>
-          <Box
-            paddingX={mobileCardView ? 0 : 4}
-            // marginBottom={4}
-            sx={{ maxHeight: '100%', overflowY: 'scroll' }}
+      <Box width={"100%"}>
+        <Container>
+          <Header />
+        </Container>
+        <Box height={"80vh"}>
+          <ScrollArea
+            speed={0.8}
+            contentClassName="content"
+            horizontal={false}
+            style={{ height: "100%" }}
           >
             <Box paddingX={4} marginBottom={4}>
-              {children}
+              <Container>{children}</Container>
             </Box>
-          </Box>
+          </ScrollArea>
         </Box>
       </Box>
     </Box>

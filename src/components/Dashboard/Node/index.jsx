@@ -1,246 +1,189 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Box,
+  Grid,
+  Tabs,
+  Tab,
   Typography,
   IconButton,
   Button,
-  Grid,
-  useMediaQuery,
-} from '@mui/material';
-import imgCard1 from '../../../assets/images/cards/box-card1.png';
-import imgCard2 from '../../../assets/images/cards/box-card2.png';
-import imgCard3 from '../../../assets/images/cards/box-card3.png';
-import imgCard4 from '../../../assets/images/cards/box-card4.png';
-import './style.css';
-import CollectButton from '../../CustomButton';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+} from "@mui/material";
+import imgCard from "../../../assets/images/svg/image.svg";
+import "./style.css";
+import CollectButton from "../../CustomButton";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import ScrollArea from "react-scrollbar";
 
-const CreateNode = ({ index }) => {
-  const [value, setValue] = useState([]);
-  const [total, setTotal] = useState(0);
-  const images = [
-    { img: imgCard1 },
-    { img: imgCard2 },
-    { img: imgCard3 },
-    { img: imgCard4 },
-  ];
-  const [selectedOption, setSelectedOption] = useState(0);
-  const handleOnChange = (v, index) => {
-    setValue([
-      ...value.slice(0, index),
-      v,
-      ...value.slice(index + 1, value.length),
-    ]);
-  };
-  const getInputSections = (total) => {
-    let content = [];
+const CreateNode = ({ onClick }) => {
+  const [value, setValue] = useState(2);
+  const [total, setTotal] = useState(1);
 
-    for (let index = 0; index < total; index++) {
-      content.push(
-        <input
-          className="appinput"
-          placeholder="Name your node"
-          value={value[index]}
-          onChange={(e) => {
-            handleOnChange(e.target.value, index);
-          }}
-        />,
-      );
-    }
-    return content;
+  const handleChange = (event, newValue) => {
+    console.log(newValue);
+    setValue(newValue);
   };
-  const mobileCardView = useMediaQuery('(max-width:500px)');
+
+  const handleClick = () => {
+    onClick(false);
+  };
 
   return (
-    <Grid container display="flex" justifyContent="space-around">
-      {!mobileCardView && (
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={4}
-          xl={4}
-          display="flex"
-          alignItems="center"
-        >
-          <Box flex={1} sx={{ textAlign: 'center' }}>
-            <Button padding={0}>
-              <img src={images[index].img} alt="card" height="265px" />
-            </Button>
-          </Box>
-        </Grid>
-      )}
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={4}
-        xl={4}
-        display="flex"
-        maxWidth="xl"
-        flexDirection="column"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <Box
-          minWidth="340px"
-          maxWidth="360px"
-          sx={{
-            borderRadius: '20px',
-            border: '1px solid white',
-            display: 'flex',
-            overflow: 'hidden',
-            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.64)',
-            minHeight: '32px',
-            maxHeight: '32px',
-            marginTop: '32px',
-            justifyContent: 'center',
-          }}
-        >
-          <Grid container display="flex" justifyContent="space-around">
-            <Grid
-              sx={{
-                flex: 1,
-                display: 'flex',
-                justifyContent: 'center',
-                color: '#fff',
-                background:
-                  selectedOption === 0
-                    ? 'linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)'
-                    : 'transparent',
-              }}
-              onClick={() => setSelectedOption(0)}
-              item
-            >
+    <Box
+      sx={{
+        display: "flex",
+      }}
+      flexDirection={{ xs: "column", sm: "column", md: "column", lg: "row" }}
+    >
+      <Box flex={1} sx={{ textAlign: "center" }}>
+        <Button padding={0} onClick={handleClick}>
+          <img src={imgCard} alt="card" />
+        </Button>
+      </Box>
+      <Box flex={2} sx={{ paddingX: 4, paddingY: 6 }}>
+        <Box>
+          <Box
+            maxWidth={"340px"}
+            sx={{
+              borderRadius: "50px",
+              border: "1px solid white",
+              display: "flex",
+              overflow: "hidden",
+            }}
+          >
+            {value === 0 ? (
               <Button
+                fullWidth
                 sx={{
-                  flex: 1,
-                  maxHeight: '32px',
-                  color: '#fff',
+                  background:
+                    "linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)",
+                  boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.64)",
+                  color: "white",
+                  borderRadius: "0",
+                  padding: "10px",
+                  fontSize: "12px",
                 }}
+                size="small"
               >
-                NEW
+                new
               </Button>
-            </Grid>
-            <Grid
-              sx={{
-                flex: 1,
-                display: 'flex',
-                justifyContent: 'center',
-                color: '#fff',
-                background:
-                  selectedOption === 1
-                    ? 'linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)'
-                    : 'transparent',
-              }}
-              onClick={() => setSelectedOption(1)}
-              item
-            >
+            ) : (
               <Button
+                fullWidth
+                sx={{ color: "white", padding: "10px", fontSize: "12px" }}
+                onClick={() => setValue(0)}
+                size="small"
+              >
+                new
+              </Button>
+            )}
+
+            {value === 1 ? (
+              <Button
+                fullWidth
                 sx={{
-                  padding: 0,
-                  fontSize: '12px',
-                  borderLeft: '1px solid #ccc',
-                  borderRight: '1px solid #ccc',
+                  background:
+                    "linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)",
+                  boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.64)",
+                  color: "white",
+                  borderRadius: "0",
+                  padding: "10px",
+                  fontSize: "12px",
+                }}
+                size="small"
+              >
+                compound
+              </Button>
+            ) : (
+              <Button
+                fullWidth
+                sx={{
+                  color: "white",
+                  padding: "10px",
+                  fontSize: "12px",
+                  borderLeft: "1px solid #ccc",
+                  borderRight: "1px solid #ccc",
                   borderRadius: 0,
-                  flex: 1,
-                  maxHeight: '32px',
-                  color: '#fff',
                 }}
+                onClick={() => setValue(1)}
+                size="small"
               >
-                COMPOUND
+                compound
               </Button>
-            </Grid>
-            <Grid
-              sx={{
-                flex: 1,
-                display: 'flex',
-                justifyContent: 'center',
-                color: '#fff',
-                background:
-                  selectedOption === 2
-                    ? 'linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)'
-                    : 'transparent',
-              }}
-              onClick={() => setSelectedOption(2)}
-              item
-            >
+            )}
+
+            {value === 2 ? (
               <Button
+                fullWidth
                 sx={{
-                  flex: 1,
-                  maxHeight: '32px',
-                  color: '#fff',
+                  background:
+                    "linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)",
+                  boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.64)",
+                  color: "white",
+                  borderRadius: "0",
+                  padding: "10px",
+                  fontSize: "12px",
                 }}
+                size="small"
               >
-                COMBINE
+                combine
               </Button>
-            </Grid>
-          </Grid>
+            ) : (
+              <Button
+                fullWidth
+                sx={{ color: "white", padding: "10px", fontSize: "12px" }}
+                onClick={() => setValue(2)}
+                size="small"
+              >
+                combine
+              </Button>
+            )}
+          </Box>
         </Box>
         <Box marginTop={4}>
           <Typography
             variant="h6"
-            sx={{ color: 'white', fontFamily: 'Kanit', textAlign: 'center' }}
+            sx={{ color: "white", fontFamily: "Kanit", textAlign: "center" }}
           >
             Number of Nodes
           </Typography>
 
-          <Box display={'flex'} alignItems="center" marginTop={4}>
-            <Box flex={1} sx={{ textAlign: 'center' }}>
+          <Box display={"flex"} alignItems="center" marginTop={4}>
+            <Box flex={1} sx={{ textAlign: "center" }}>
               <IconButton
                 aria-label="remove"
                 size="large"
-                onClick={() => {
-                  if (total > 0) setTotal(total - 1);
-                }}
+                onClick={() => setTotal(total - 1)}
               >
-                <RemoveIcon
-                  sx={{
-                    color: total > 0 ? 'white' : 'rgba(255, 255, 255, 0.4)',
-                  }}
-                  fontSize="large"
-                />
+                <RemoveIcon sx={{ color: "white" }} fontSize="large" />
               </IconButton>
             </Box>
             <Box
               flex={1}
-              sx={{
-                backgroundColor: '#23242C',
-                borderRadius: '10px',
-                minHeight: '100px',
-                minWidth: '84px',
-                maxHeight: '100px',
-                maxWidth: '84px',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
+              sx={{ backgroundColor: "#23242C", borderRadius: "10px" }}
             >
               <Typography
                 variant="h1"
                 sx={{
-                  color: 'white',
-                  fontFamily: 'Kanit',
-                  textAlign: 'center',
+                  color: "white",
+                  fontFamily: "Kanit",
+                  textAlign: "center",
                   background:
-                    'linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%)',
-                  backgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
+                    "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%)",
+                  backgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
                 }}
               >
                 {total}
               </Typography>
             </Box>
-            <Box flex={1} sx={{ textAlign: 'center' }}>
+            <Box flex={1} sx={{ textAlign: "center" }}>
               <IconButton
                 aria-label="delete"
                 size="large"
                 onClick={() => setTotal(total + 1)}
               >
-                <AddIcon sx={{ color: 'white' }} fontSize="large" />
+                <AddIcon sx={{ color: "white" }} fontSize="large" />
               </IconButton>
             </Box>
           </Box>
@@ -248,63 +191,66 @@ const CreateNode = ({ index }) => {
         <Box marginTop={2}>
           <Typography
             variant="h6"
-            sx={{ color: 'white', fontFamily: 'Kanit', textAlign: 'center' }}
+            sx={{ color: "white", fontFamily: "Kanit", textAlign: "center" }}
           >
             TOTAL
           </Typography>
           <Typography
             variant="h6"
             sx={{
-              color: 'white',
-              fontFamily: 'Kanit',
-              textAlign: 'center',
+              color: "white",
+              fontFamily: "Kanit",
+              textAlign: "center",
               background:
-                'linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%)',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+                "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%)",
+              backgroundClip: "text",
+              WebkitTextFillColor: "transparent",
               fontWeight: 600,
-              marginBottom: '13px',
             }}
           >
             21.25 THOR
           </Typography>
         </Box>
-      </Grid>
-      <Box
-        flex={2}
-        paddingX={2}
-        paddingY={4}
-        maxHeight="372px"
-        paddingRight="16px"
-      >
+      </Box>
+      <Box flex={2} paddingX={2} paddingY={4}>
         <Typography
           variant="h6"
           sx={{
-            color: 'white',
-            fontFamily: 'Kanit',
+            color: "white",
+            fontFamily: "Kanit",
             fontWeight: 600,
             opacity: 0.6,
           }}
         >
           Step 1 of 2
         </Typography>
-        <Box overflow="auto" maxHeight={'210px'}>
-          {getInputSections(total)?.map((i) => i)}
+
+        <ScrollArea
+          speed={0.8}
+          contentClassName="content"
+          horizontal={false}
+          style={{ height: "30vh", marginTop: "10px" }}
+        >
+          {total > 0 ? (
+            <>
+              {Array(total)
+                .fill(0)
+                .map((v) => (
+                  <input
+                    key={v}
+                    className="appinput"
+                    placeholder="Name your node"
+                  />
+                ))}
+            </>
+          ) : null}
+        </ScrollArea>
+
+        <Box sx={{ textAlign: "right", marginTop: 2 }}>
+          <CollectButton label="APPROVE CONTRACT" />
         </Box>
-        {total > 0 && (
-          <Box
-            sx={{
-              textAlign: 'right',
-              marginTop: 2,
-              justifyContent: mobileCardView ? 'center' : undefined,
-              display: mobileCardView ? 'flex' : undefined,
-            }}
-          >
-            <CollectButton label="APPROVE CONTRACT" />
-          </Box>
-        )}
       </Box>
-    </Grid>
+    </Box>
   );
 };
 
