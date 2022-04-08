@@ -7,16 +7,20 @@
   justify-content: center;
   padding: 10px;
   border: 1px solid #5c5c5c78;
-  /* box-sha/dow: 0px -1px 16px rgba(222, 191, 112, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.25); */
   border-radius: 12px;
-transition: 0.5s;
-
+  transition: 0.5s;
+  filter: brightness(50%);
   position: relative;
+  cursor: pointer;
 }
 
 .spidercard:hover {
   background: #11141d;
   margin-top: -10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  filter: brightness(100%);
+
 }
 
 .spidernumber {

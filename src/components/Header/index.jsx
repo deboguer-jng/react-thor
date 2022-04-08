@@ -50,14 +50,12 @@ const Header = () => {
   return (
     <Box
       sx={{
-        height: "15vh",
+        height: "10vh",
         width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-
-        paddingX: 10,
-        paddingY: 10,
+        paddingTop: "20px",
       }}
     >
       <Logo />
@@ -102,6 +100,7 @@ const Header = () => {
                   backgroundColor: "white",
                 },
                 fontSize: "12px",
+                fontFamily: "Kanit",
                 backgroundColor: "white",
                 color: "black",
                 borderRadius: "21px",
@@ -112,7 +111,12 @@ const Header = () => {
             </Button>
           ) : (
             <Button
-              sx={{ fontSize: "12px", paddingX: "20px" }}
+              sx={{
+                fontSize: "12px",
+                paddingX: "20px",
+                fontFamily: "Kanit",
+                color: "white",
+              }}
               onClick={() => setActiveTab(0)}
             >
               34.712 THOR | 34.712 AVAX
@@ -124,18 +128,21 @@ const Header = () => {
                 ":hover": {
                   backgroundColor: "white",
                 },
+                fontFamily: "Kanit",
                 fontSize: "12px",
                 backgroundColor: "white",
                 color: "black",
                 borderRadius: "21px",
-                paddingX: "11px",
-                marginLeft: "2px",
+                paddingX: "25px",
               }}
             >
               0x1051..AgD2
             </Button>
           ) : (
-            <Button sx={{ fontSize: "12px" }} onClick={() => setActiveTab(1)}>
+            <Button
+              sx={{ fontSize: "12px", fontFamily: "Kanit", color: "white" }}
+              onClick={() => setActiveTab(1)}
+            >
               0x1051..AgD2
             </Button>
           )}

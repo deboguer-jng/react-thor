@@ -17,7 +17,7 @@ const InputSearch = () => {
       <IconButton
         aria-label="search"
         size="large"
-        sx={{ position: "absolute", top: "10%", right: "2%" }}
+        sx={{ position: "absolute", top: "12%", right: "1%" }}
       >
         <img src={imgSearch} alt="search" width={"20px"} />
       </IconButton>

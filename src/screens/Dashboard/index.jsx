@@ -8,26 +8,44 @@ import Nodes from "../../components/Dashboard/Node";
 import MainCard from "../../components/Dashboard/Cards/MainCard";
 
 import imgGraph from "../../assets/images/updown-graph.png";
+import imgCup from "../../assets/images/cup.png";
+import imgDollar from "../../assets/images/dollar.png";
+import imgEarth from "../../assets/images/earth.png";
 
 function Dashboard() {
   const [mainCard, setMainCard] = useState(false);
 
   return (
     <Layout>
-      <Heading title={"dashboard"} />
+      <Box marginY={"20px"}>
+        <Heading title={"dashboard"} />
+      </Box>
       <Container maxWidth="xl">
         <Grid container spacing={2}>
-          <Card title="Rewards" number="32.111" />
+          <Card
+            title="Rewards"
+            number="32.111"
+            btnLabel="collect all"
+            icon={imgCup}
+          />
           <Card
             title="Thor Price"
             noBoxes={true}
             number="$35.60"
             image={imgGraph}
+            icon={imgDollar}
+            btnLabel="view chart"
           />
-          <Card title="My Nodes" number="8" />
+          <Card
+            title="My Nodes"
+            number="8"
+            btnLabel="view nodes"
+            icon={imgEarth}
+            hideHover={true}
+          />
         </Grid>
       </Container>
-      <Box marginY={8}>
+      <Box marginY={"20px"}>
         <Heading title={"create node"} />
       </Box>
 
@@ -39,7 +57,7 @@ function Dashboard() {
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.48)",
             borderRadius: "20px",
             paddingX: "40px",
-            paddingY: "20px",
+            paddingY: "10px",
           }}
         >
           {mainCard ? (

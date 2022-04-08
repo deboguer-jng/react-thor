@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Layout from "../../components/Layout";
 import Heading from "../../components/Heading";
@@ -9,16 +9,40 @@ import {
   AccordionSummary,
   Typography,
   AccordionDetails,
+  Button,
 } from "@mui/material";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import InputSearch from "../../components/Faq/InputSearch";
+import imgPlus from "../../assets/images/plus.png";
+import imgMinus from "../../assets/images/minus.png";
+import imgLine from "../../assets/images/line.png";
+
+const data = [
+  {
+    title: "What is the origin of Thor?",
+    para: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Blanditiis impedit, repellendus quasi consectetur harum commodi eligendi recusandae tempora aperiam cum iste, aut modi, corrupti ipsum assumenda quam sunt. Ipsum, praesentium?",
+  },
+  {
+    title: "What is the origin of Thor?",
+    para: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Blanditiis impedit, repellendus quasi consectetur harum commodi eligendi recusandae tempora aperiam cum iste, aut modi, corrupti ipsum assumenda quam sunt. Ipsum, praesentium?",
+  },
+  {
+    title: "What is the origin of Thor?",
+    para: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Blanditiis impedit, repellendus quasi consectetur harum commodi eligendi recusandae tempora aperiam cum iste, aut modi, corrupti ipsum assumenda quam sunt. Ipsum, praesentium?",
+  },
+];
 
 const Faq = () => {
   const [expanded, setExpanded] = React.useState(false);
+  const [activeTab, setActiveTab] = useState(0);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
+  };
+
+  const handleAccordion = (i) => {
+    setActiveTab(i);
   };
 
   return (
@@ -29,121 +53,73 @@ const Faq = () => {
         <InputSearch />
 
         <Box marginTop={6}>
-          <Accordion
-            expanded={expanded === "panel1"}
-            onChange={handleChange("panel1")}
-            sx={{ backgroundColor: "transparent" }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-              sx={{
-                background:
-                  "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
-                marginBottom: 2,
-              }}
-            >
-              <Typography sx={{ color: "white", fontFamily: "Kanit" }}>
-                What is the origin of Thor?
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails sx={{ background: "rgba(39, 47, 80, 0.5)" }}>
-              <Typography sx={{ color: "white", fontFamily: "Kanit" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-                quisquam blanditiis cum tenetur earum facere, optio nobis.
-                Eligendi nesciunt aliquam reiciendis sit earum tenetur,
-                repellendus nemo beatae maiores? Atque, omnis!
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-
-          <Accordion
-            expanded={expanded === "panel2"}
-            onChange={handleChange("panel2")}
-            sx={{ backgroundColor: "transparent" }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-              sx={{
-                background:
-                  "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
-                marginBottom: 2,
-              }}
-            >
-              <Typography sx={{ color: "white", fontFamily: "Kanit" }}>
-                What is the origin of Thor?
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails sx={{ background: "rgba(39, 47, 80, 0.5)" }}>
-              <Typography sx={{ color: "white", fontFamily: "Kanit" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-                quisquam blanditiis cum tenetur earum facere, optio nobis.
-                Eligendi nesciunt aliquam reiciendis sit earum tenetur,
-                repellendus nemo beatae maiores? Atque, omnis!
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-
-          <Accordion
-            expanded={expanded === "panel3"}
-            onChange={handleChange("panel3")}
-            sx={{ backgroundColor: "transparent" }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-              sx={{
-                background:
-                  "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
-                marginBottom: 2,
-              }}
-            >
-              <Typography sx={{ color: "white", fontFamily: "Kanit" }}>
-                What is the origin of Thor?
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails sx={{ background: "rgba(39, 47, 80, 0.5)" }}>
-              <Typography sx={{ color: "white", fontFamily: "Kanit" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-                quisquam blanditiis cum tenetur earum facere, optio nobis.
-                Eligendi nesciunt aliquam reiciendis sit earum tenetur,
-                repellendus nemo beatae maiores? Atque, omnis!
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-
-          <Accordion
-            expanded={expanded === "panel4"}
-            onChange={handleChange("panel4")}
-            sx={{ backgroundColor: "transparent" }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-              sx={{
-                background:
-                  "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
-                marginBottom: 2,
-              }}
-            >
-              <Typography sx={{ color: "white", fontFamily: "Kanit" }}>
-                What is the origin of Thor?
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails sx={{ background: "rgba(39, 47, 80, 0.5)" }}>
-              <Typography sx={{ color: "white", fontFamily: "Kanit" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-                quisquam blanditiis cum tenetur earum facere, optio nobis.
-                Eligendi nesciunt aliquam reiciendis sit earum tenetur,
-                repellendus nemo beatae maiores? Atque, omnis!
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+          {data.map((v, i) => (
+            <Box marginBottom={"5px"}>
+              <Button
+                sx={{
+                  width: "100%",
+                  height: "56px",
+                  background:
+                    activeTab === i
+                      ? "rgba(39, 47, 80, 0.5)"
+                      : "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  paddingX: "20px",
+                  borderRadius: 0,
+                }}
+                onClick={() => handleAccordion(i)}
+              >
+                <Typography
+                  sx={{
+                    fontSize: "20px",
+                    color: "white",
+                    fontFamily: "Kanit",
+                  }}
+                  textTransform="none"
+                >
+                  What is the origin of Thor?
+                </Typography>
+                {activeTab === i ? (
+                  <img src={imgMinus} />
+                ) : (
+                  <img src={imgPlus} width={"24px"} height="24px" />
+                )}
+              </Button>
+              {activeTab === i ? (
+                <Box
+                  sx={{
+                    lineHeight: "20px",
+                    background: "rgba(39, 47, 80, 0.5)",
+                    paddingX: "50px",
+                    paddingY: "10px",
+                    display: "flex",
+                  }}
+                >
+                  <Box>
+                    <img src={imgLine} alt="faq line" />
+                  </Box>
+                  <Box marginLeft={2}>
+                    <Typography
+                      sx={{
+                        fontFamily: "Kanit",
+                        fontStyle: "italic",
+                        fontWeight: "20px",
+                        color: "rgba(255, 255, 255, 0.6)",
+                      }}
+                    >
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Blanditiis impedit, repellendus quasi consectetur harum
+                      commodi eligendi recusandae tempora aperiam cum iste, aut
+                      modi, corrupti ipsum assumenda quam sunt. Ipsum,
+                      praesentium?
+                    </Typography>
+                  </Box>
+                </Box>
+              ) : null}
+            </Box>
+          ))}
         </Box>
       </Container>
     </Layout>

@@ -41,10 +41,9 @@ const HeadCard = () => {
                   Total Volume Locked
                 </Typography>
               </Box>
-              <Box marginTop={2} marginBottom={2}>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
                 <Typography
                   marginLeft={2}
-                  variant="h2"
                   gutterBottom
                   sx={{
                     background:
@@ -56,9 +55,24 @@ const HeadCard = () => {
                     fontStyle: "normal",
                     WebkitTextFillColor: "transparent",
                     fontWeight: 600,
+                    fontSize: "72px",
                   }}
                 >
                   5,366,044
+                </Typography>
+                <Typography
+                  gutterBottom
+                  sx={{
+                    color: "#8c8b97",
+                    fontFamily: "Kanit",
+                    fontStyle: "normal",
+                    fontWeight: 600,
+                    fontSize: "32px",
+                    marginTop: 2,
+                    // marginTop: "-50px",
+                  }}
+                >
+                  .86
                 </Typography>
               </Box>
             </Box>

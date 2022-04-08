@@ -16,7 +16,6 @@ const Layout = ({ children }) => {
     <Box
       sx={{
         width: "100%",
-        // height: '100vh',
         display: "flex",
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "100% 100%",
@@ -30,7 +29,7 @@ const Layout = ({ children }) => {
         <Container>
           <Header />
         </Container>
-        <Box height={"80vh"}>
+        <Box height={"88vh"}>
           <ScrollArea
             speed={0.8}
             contentClassName="content"

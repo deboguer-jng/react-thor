@@ -6,7 +6,15 @@ import CustomButton from "../CustomButton";
 import imgReward from "../../assets/images/svg/rewardIcon.svg";
 import Boxes from "../Boxes";
 
-const CardDouble = ({ title, number, noBoxes, image }) => {
+const CardDouble = ({
+  title,
+  number,
+  noBoxes,
+  image,
+  btnLabel,
+  icon,
+  hideHover,
+}) => {
   return (
     <Grid item xs={12} sm={6} md={6} lg={4}>
       <Paper
@@ -39,8 +47,8 @@ const CardDouble = ({ title, number, noBoxes, image }) => {
               }}
             >
               <img
-                style={{ width: "20px", height: "20px" }}
-                src={imgReward}
+                style={{ width: "24px", height: "24px" }}
+                src={icon}
                 alt="img"
               />
             </Box>
@@ -82,7 +90,7 @@ const CardDouble = ({ title, number, noBoxes, image }) => {
             </Box>
           </Box>
           <Box>
-            <CustomButton label="collect all" fontSize="11px" />
+            <CustomButton label={btnLabel} fontSize="11px" />
           </Box>
         </Grid>
         {noBoxes ? (
@@ -145,7 +153,7 @@ const CardDouble = ({ title, number, noBoxes, image }) => {
           </Box>
         ) : (
           <Box marginTop={"5px"}>
-            <Boxes />
+            <Boxes hideHover={hideHover} />
           </Box>
         )}
       </Paper>

@@ -1,16 +1,11 @@
 import React from "react";
 
-import {
-  Container,
-  Box,
-  Typography,
-  Button,
-  Avatar,
-  Chip,
-} from "@mui/material";
+import { Container, Box, Typography, Button } from "@mui/material";
 
-import imgNode from "../../assets/images/nodes.png";
+import imgNode from "../../assets/images/earth.png";
 import Cards from "./Cards";
+import CustomButton from "../CustomButton";
+import OutlinedButton from "../CustomButton/OutlinedButton";
 
 const HeadCard = () => {
   return (
@@ -27,21 +22,24 @@ const HeadCard = () => {
       <Box display="flex">
         <Box flex={1} display="flex" justifyContent={"space-between"}>
           <Box>
-            <Box display={"flex"}>
-              <img src={imgNode} alt="coin" width={40} height={40} />
+            <Box display={"flex"} alignItems="center">
+              <img src={imgNode} alt="coin" width={"32px"} height={"32px"} />
               <Typography
-                variant="h4"
                 component="div"
                 color={"white"}
                 fontWeight={500}
-                sx={{ fontFamily: "Kanit", opacity: 0.5, marginLeft: 2 }}
+                sx={{
+                  fontFamily: "Kanit",
+                  opacity: 0.5,
+                  marginLeft: 2,
+                  fontSize: "44px",
+                }}
               >
                 My Nodes
               </Typography>
             </Box>
-            <Container maxWidth="md" sx={{ marginTop: 2, marginLeft: 4 }}>
+            <Container maxWidth="md" sx={{ marginLeft: 4 }}>
               <Typography
-                variant="h1"
                 gutterBottom
                 component="div"
                 sx={{
@@ -53,6 +51,8 @@ const HeadCard = () => {
                   textFillColor: "transparent",
                   fontStyle: "normal",
                   WebkitTextFillColor: "transparent",
+                  lineHeight: "144px",
+                  fontSize: "96px",
                   fontWeight: 600,
                 }}
               >
@@ -66,30 +66,10 @@ const HeadCard = () => {
             justifyContent="flex-end"
           >
             <Box marginBottom={2}>
-              <Button
-                variant="outlined"
-                sx={{
-                  color: "white",
-                  borderColor: "white",
-                  borderRadius: 20,
-                }}
-                fullWidth
-              >
-                claim all
-              </Button>
+              <OutlinedButton label={"claim all"} fontSize="12px" />
             </Box>
             <Box>
-              <Button
-                variant="outlined"
-                sx={{
-                  color: "white",
-                  borderColor: "white",
-                  borderRadius: 20,
-                }}
-                fullWidth
-              >
-                Pay all fees
-              </Button>
+              <OutlinedButton label={"pay all fees"} fontSize="12px" />
             </Box>
           </Box>
         </Box>

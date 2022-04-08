@@ -7,3 +7,33 @@
   border: transparent;
   color: white;
 }
+
+.roundBorder {
+  border-left: 0.5px solid rgba(215, 215, 215, 0.2);
+  border-right: 0.5px solid rgba(215, 215, 215, 0.2);
+  border-bottom: 0.5px solid rgba(215, 215, 215, 0.2);
+  border-radius: 10px;
+  padding: 20px 0px;
+  position: relative;
+}
+
+.roundBorder::before {
+  content: "";
+  width: 35%;
+  height: 0.5px;
+  position: absolute;
+  background: rgba(215, 215, 215, 0.2);
+  top: 0;
+  left: 7px;
+}
+
+.roundBorder::after {
+  content: "";
+  width: 35%;
+  height: 0.5px;
+  position: absolute;
+  background: rgba(215, 215, 215, 0.2);;
+  top: 0;
+  right: 7px;
+  border-radius: 10px;
+}

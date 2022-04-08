@@ -1,7 +1,6 @@
 import React from "react";
 
 import {
-  Container,
   Box,
   Button,
   Typography,
@@ -11,62 +10,41 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Paper,
-  FormControl,
-  InputLabel,
-  NativeSelect,
-  Tooltip,
 } from "@mui/material";
+import ScrollArea from "react-scrollbar";
+import CustomButton from "../CustomButton";
 
 import imgAvax from "../../assets/images/avax.png";
-import CustomButton from "../CustomButton";
+import imgCopy from "../../assets/images/copy.png";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
-import ScrollArea from "react-scrollbar";
+import styles from "./style.module.css";
 
 const InvestTable = () => {
   return (
-    <Container maxWidth="lg" sx={{ marginBottom: 4 }}>
-      <Box marginBottom={4}>
-        <Box display={"flex"} justifyContent="space-between">
+    <>
+      <Box>
+        <Box
+          display={"flex"}
+          justifyContent="space-between"
+          marginBottom="10px"
+        >
           <Box>
-            <Button
-              variant="contained"
-              style={{
-                background:
-                  "linear-gradient(90deg, #2E62FF 26.2%, #4B24DC 100%)",
-              }}
-              sx={{
-                borderRadius: 20,
-                paddingX: 4,
-                borderRadius: 20,
-              }}
-            >
-              create node
-            </Button>
+            <CustomButton label="create node" fontSize="14px" />
           </Box>
           <Box display={"flex"} alignItems="center">
-            <Box sx={{ minWidth: 120 }}>
-              <FormControl fullWidth sx={{ color: "white" }}>
-                <InputLabel
-                  variant="standard"
-                  htmlFor="uncontrolled-native"
-                  sx={{ color: "white" }}
-                >
-                  View All
-                </InputLabel>
-                <NativeSelect
-                  inputProps={{
-                    name: "View All",
-                    id: "uncontrolled-native",
-                  }}
-                  sx={{ color: "white" }}
-                >
-                  <option value={10}>Ten</option>
-                  <option value={20}>Twenty</option>
-                  <option value={30}>Thirty</option>
-                </NativeSelect>
-              </FormControl>
+            <Box sx={{ minWidth: 120, display: "flex", alignItems: "center" }}>
+              <Typography
+                sx={{
+                  color: "white",
+                  fontSize: "18px",
+                  fontFamily: "Kanit",
+                  fontWeight: 300,
+                }}
+              >
+                View All
+              </Typography>
+              <MdOutlineKeyboardArrowDown color="white" fontSize={22} />
             </Box>
             <Box marginLeft={2}>
               <input
@@ -92,13 +70,17 @@ const InvestTable = () => {
         style={{ height: "40vh" }}
       >
         <TableContainer
-          component={Paper}
+          // component={Paper}
           sx={{
             background:
               "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.48)",
           }}
-          style={{ backgroundColor: "transparent", borderRadius: "12px" }}
+          style={{
+            backgroundColor: "transparent",
+            borderRadius: "12px",
+            width: "100%",
+          }}
         >
           <Table
             sx={{
@@ -152,6 +134,15 @@ const InvestTable = () => {
                   }}
                 >
                   Status
+                </TableCell>
+                <TableCell
+                  sx={{
+                    fontWeight: 500,
+                    fontFamily: "Kanit",
+                    color: "rgba(151,155,172,0.5)",
+                  }}
+                >
+                  Tax
                 </TableCell>
                 <TableCell
                   sx={{
@@ -251,37 +242,35 @@ const InvestTable = () => {
                     </Box>
                   </TableCell>
                   <TableCell>
+                    <Typography
+                      variant="subtitle1"
+                      component="div"
+                      sx={{
+                        color: "#fff",
+                        fontFamily: "Kanit",
+                        fontWeight: 300,
+                      }}
+                    >
+                      40%
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
                     <Box display={"flex"} alignItems="center">
-                      <Tooltip
-                        title={"lorlskdjaksldjasdjasdlkasjdkasdklasdlkasdlakd"}
-                      >
-                        <Box
-                          sx={{
-                            width: "54px",
-                            height: "32px",
-                            border: "0.5px solid rgba(255, 255, 255, 0.3)",
-                            padding: "5px",
-                            borderRadius: "16px",
-                            filter:
-                              "drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.32));",
-                            display: "flex",
-                            alignItems: "center",
-                          }}
-                        >
-                          <img
-                            src={imgAvax}
-                            alt="AVAX"
-                            width={"24px"}
-                            height={"24px"}
+                      <Box className={styles.tooltipContainer}>
+                        <img
+                          src={imgAvax}
+                          alt="AVAX"
+                          width={"24px"}
+                          height={"24px"}
+                        />
+                        <Box marginLeft={"3px"} marginTop="5px">
+                          <MdOutlineKeyboardArrowDown
+                            fontSize={"18px"}
+                            color="white"
                           />
-                          <Box marginLeft={"3px"} marginTop="5px">
-                            <MdOutlineKeyboardArrowDown
-                              fontSize={"18px"}
-                              color="white"
-                            />
-                          </Box>
                         </Box>
-                      </Tooltip>
+                        {/* <Bn */}
+                      </Box>
 
                       <Box marginLeft={2}>
                         <CustomButton label="claim" />
@@ -304,7 +293,7 @@ const InvestTable = () => {
           </Table>
         </TableContainer>
       </ScrollArea>
-    </Container>
+    </>
   );
 };
 
