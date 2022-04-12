@@ -9,68 +9,67 @@
     justify-content: space-between;
 } */
 
-
 /* 
 .buttonApprove {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
 
 .font-20 {
-    font-size: 20px !important;
+  font-size: 20px !important;
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
 .minus {
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 .counter {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .greyBack {
-    background: #23242C;
-    border-radius: 10.0556px;
-    padding: 10px;
+  background: #23242c;
+  border-radius: 10.0556px;
+  padding: 10px;
 }
 
 .font-40 {
-    font-size: 60px !important;
+  font-size: 60px !important;
 }
 
 .tab {
-    border: 1px solid #5C5C5C;
-    box-sizing: border-box;
-    border-radius: 30px;
+  border: 1px solid #5c5c5c;
+  box-sizing: border-box;
+  border-radius: 30px;
 }
 
 .tabActive {
-    background: linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%);
-    padding: 10px 15px;
-    cursor: pointer;
+  background: linear-gradient(91.33deg, #2e62ff 19.49%, #4a28de 88.25%);
+  padding: 10px 15px;
+  cursor: pointer;
 }
 
 .tabinActive {
-    cursor: pointer;
-    padding: 10px 15px;
+  cursor: pointer;
+  padding: 10px 15px;
 }
 
 .borderL {
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 
 .borderH {
@@ -78,6 +77,3 @@
     border-top: none;
     border-bottom: none;
 } */
-
-
-
