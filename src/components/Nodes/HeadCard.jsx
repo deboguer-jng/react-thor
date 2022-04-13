@@ -66,10 +66,18 @@ const HeadCard = () => {
             justifyContent="flex-end"
           >
             <Box marginBottom={2}>
-              <OutlinedButton label={"claim all"} fontSize="12px" />
+              <OutlinedButton
+                label={"claim all"}
+                width="124px"
+                fontSize="12px"
+              />
             </Box>
             <Box>
-              <OutlinedButton label={"pay all fees"} fontSize="12px" />
+              <OutlinedButton
+                label={"pay all fees"}
+                width="124px"
+                fontSize="12px"
+              />
             </Box>
           </Box>
         </Box>

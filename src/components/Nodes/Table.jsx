@@ -19,6 +19,7 @@ import imgCopy from "../../assets/images/copy.png";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 import styles from "./style.module.css";
+import OutlinedButton from "../CustomButton/OutlinedButton";
 
 const InvestTable = () => {
   return (
@@ -155,7 +156,7 @@ const InvestTable = () => {
                 </TableCell>
               </TableRow>
             </TableHead>
-            <TableBody>
+            <TableBody className={styles.tbody}>
               {[1, 2, 3, 4, 5, 6, 7].map((v) => (
                 <TableRow>
                   <TableCell>
@@ -255,7 +256,7 @@ const InvestTable = () => {
                     </Typography>
                   </TableCell>
                   <TableCell>
-                    <Box display={"flex"} alignItems="center">
+                    <Box display={"flex"} alignItems="center" className={styles.boxxxx}> 
                       <Box className={styles.tooltipContainer}>
                         <img
                           src={imgAvax}
@@ -269,21 +270,54 @@ const InvestTable = () => {
                             color="white"
                           />
                         </Box>
-                        {/* <Bn */}
                       </Box>
-
-                      <Box marginLeft={2}>
-                        <CustomButton label="claim" />
-                      </Box>
-
-                      <Box marginLeft={2}>
-                        <Button
-                          variant="outlined"
-                          sx={{ borderRadius: "20px" }}
-                          size="small"
+                      <Box className={styles.tooltip}>
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <img
+                            src={imgCopy}
+                            alt="copy"
+                            width="8px"
+                            height={"8px"}
+                          />
+                          <p className={styles.copyTxt}>COPY</p>
+                        </Box>
+                        <p className={styles.para}>
+                          https://rpc.thor.financial/node/c057e88a-4808-4b45-acc4-eb7464e70fba
+                        </p>
+                        <Box
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            marginTop: "10px",
+                          }}
                         >
-                          pay fee
-                        </Button>
+                          <img
+                            src={imgCopy}
+                            alt="copy"
+                            width="8px"
+                            height={"8px"}
+                          />
+                          <p className={styles.copyTxt}>COPIED</p>
+                        </Box>
+                        <p className={styles.para}>
+                          https://rpc.thor.financial/node/c057e88a-4808-4b45-acc4-eb7464e70fba
+                        </p>
+                        <Box marginTop="10px">
+                          <p
+                            className={styles.copyTxt}
+                            style={{ textAlign: "center" }}
+                          >
+                            HOW TO
+                          </p>
+                        </Box>
+                      </Box>
+
+                      <Box marginLeft={2}>
+                        <OutlinedButton label="claim" />
+                      </Box>
+
+                      <Box marginLeft={2}>
+                        <CustomButton label="pay fee" />
                       </Box>
                     </Box>
                   </TableCell>

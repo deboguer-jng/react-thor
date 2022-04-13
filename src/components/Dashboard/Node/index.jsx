@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Box, Typography, IconButton, Button } from "@mui/material";
 import imgCard from "../../../assets/images/cards/box-card3.png";
-import "./style.css";
 import CollectButton from "../../CustomButton";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import ScrollArea from "react-scrollbar";
+import styles from "../style.module.css";
 
 const CreateNode = ({ onClick }) => {
   const [value, setValue] = useState(2);
@@ -46,10 +46,6 @@ const CreateNode = ({ onClick }) => {
         setTotal(e.target.value);
       }
     }
-
-    // if (total === "") {
-    //   setTotal(1);
-    // }
   };
 
   return (
@@ -58,6 +54,7 @@ const CreateNode = ({ onClick }) => {
         display: "flex",
         alignItems: "center",
       }}
+      className={styles.childNodeContainer}
       flexDirection={{ xs: "column", sm: "column", md: "column", lg: "row" }}
     >
       <Box flex={1} sx={{ textAlign: "center" }}>
@@ -271,7 +268,7 @@ const CreateNode = ({ onClick }) => {
                 .map((v) => (
                   <input
                     key={v}
-                    className="appinput"
+                    className={styles.appinput}
                     placeholder="Name your node"
                   />
                 ))}
@@ -280,7 +277,11 @@ const CreateNode = ({ onClick }) => {
         </ScrollArea>
 
         <Box sx={{ textAlign: "right", marginTop: 2 }}>
-          <CollectButton label="APPROVE CONTRACT" />
+          {total > 1 ? (
+            <CollectButton label="Create Nodes" />
+          ) : (
+            <CollectButton label="Create Node" />
+          )}
         </Box>
       </Box>
     </Box>

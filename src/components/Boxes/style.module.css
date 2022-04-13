@@ -12,15 +12,15 @@
   filter: brightness(50%);
   position: relative;
   cursor: pointer;
+  z-index: 20;
 }
 
-.spidercard:hover {
+.mainContainer:hover .spidercard {
   background: #11141d;
   margin-top: -10px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
   filter: brightness(100%);
-
+  box-shadow: 0px -1px 16px rgba(222, 191, 112, 0.1),
+    0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .spidernumber {
@@ -34,21 +34,26 @@
 }
 
 .hideBtn {
-  background-color: blue;
-  position: absolute;
+  background-color: #3751f6;
   width: 100%;
-  top: 65%;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
   color: white;
   text-align: center;
   font-size: 10px;
-  padding: 10px 0px;
+  padding: 10px 10px 4px 10px;
+  transition: 0.5s;
+  margin-top: -35px;
+  line-height: 15px;
   opacity: 0;
-transition: 0.5s;
 }
 
-.spidercard:hover .hideBtn {
-  top: 95%;
+.hideBtn:hover {
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.mainContainer:hover .hideBtn {
+  margin-top: -10px;
   opacity: 1;
 }

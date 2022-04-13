@@ -7,20 +7,46 @@ import imgCard2 from "../../../assets/images/cards/box-card2.png";
 import imgCard3 from "../../../assets/images/cards/box-card3.png";
 import imgCard4 from "../../../assets/images/cards/box-card4.png";
 
-import styles from "./style.module.css";
+import styles from "../style.module.css";
+import styledEngine from "@mui/styled-engine";
 
 const MainCard = ({ onClick }) => {
   const [mainCard, setMainCard] = useState(true);
+  const [collapse, setCollapse] = useState(false);
+  const [frontCard, setFrontCard] = useState("");
 
   const handleClick = () => {
     onClick(true);
   };
 
+  const handleCard = (i) => {
+    // alert(i);
+    console.log(i);
+  };
+
   return (
-    <Box className={styles.mainContainer}>
+    <Box className={styles.parentMainContainer}>
+      {/* <Box
+        className={collapse ? styles.cardBoxCollapse : styles.cardBoxExpend}
+        sx={{ marginBottom: 40 }}
+        onClick={() => setCollapse(!collapse)}
+      >
+        <Box className={styles.card1} onClick={() => handleCard(0)}></Box>
+        <Box className={styles.card2} onClick={() => handleCard(1)}></Box>
+        <Box className={styles.card3} onClick={() => handleCard(2)}></Box>
+        <Box className={styles.card4} onClick={() => handleCard(3)}></Box>
+      </Box> */}
       <Box className={styles.child1} width={mainCard ? "100%" : "20%"}>
         <Grid container spacing={2}>
-          <Grid item xl={3} lg={3} md={6} sm={6} xs={12}>
+          <Grid
+            item
+            xl={3}
+            lg={3}
+            md={6}
+            sm={6}
+            xs={12}
+            className={styles.pmBoxes}
+          >
             <Box
               padding={4}
               className={

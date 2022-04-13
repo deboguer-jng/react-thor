@@ -12,6 +12,8 @@ import imgCup from "../../assets/images/cup.png";
 import imgDollar from "../../assets/images/dollar.png";
 import imgEarth from "../../assets/images/earth.png";
 
+import styles from "../../components/Dashboard/style.module.css";
+
 function Dashboard() {
   const [mainCard, setMainCard] = useState(false);
 
@@ -50,16 +52,9 @@ function Dashboard() {
       </Box>
 
       <Container maxWidth="xl">
-        <Box
-          sx={{
-            background:
-              "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
-            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.48)",
-            borderRadius: "20px",
-            paddingX: "40px",
-            paddingY: "10px",
-          }}
-        >
+        <Box className={styles.mainContainer}>
+          {/* <MainCard onClick={setMainCard} /> */}
+          {/* <Nodes onClick={setMainCard} /> */}
           {mainCard ? (
             <Nodes onClick={setMainCard} />
           ) : (

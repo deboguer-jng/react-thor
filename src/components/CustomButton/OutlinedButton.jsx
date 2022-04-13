@@ -2,13 +2,13 @@ import React from "react";
 
 import { Button } from "@mui/material";
 
-const OutlinedButton = ({ label, fontSize, paddingX }) => {
+const OutlinedButton = ({ label, fontSize, paddingX, width }) => {
   return (
     <Button
       sx={{
         borderRadius: "25px",
         fontFamily: "Kanit",
-        width: "124px",
+        width: width,
         fontSize: fontSize,
         borderColor: "white",
         color: "white",

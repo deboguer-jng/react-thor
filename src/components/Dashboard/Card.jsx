@@ -3,7 +3,6 @@ import React from "react";
 import { Box, Grid, Paper, Typography, Container } from "@mui/material";
 import CustomButton from "../CustomButton";
 
-import imgReward from "../../assets/images/svg/rewardIcon.svg";
 import Boxes from "../Boxes";
 
 const CardDouble = ({
