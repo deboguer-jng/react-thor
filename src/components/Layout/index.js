@@ -4,17 +4,16 @@ import { Box, Container } from "@mui/material";
 
 // Components
 import Header from "../Header";
-import LeftSideBar from "../LeftSideBar";
+import LeftSideBar from "../LeftSidebar";
 
 // Images
 import bgImage from "../../assets/images/bg-img.png";
 
 import ScrollArea from "react-scrollbar";
 
-import styles from './style.module.css';
+import styles from "./style.module.css";
 
 const Layout = ({ children }) => {
-
   return (
     <Box
       sx={{
@@ -44,8 +43,8 @@ const Layout = ({ children }) => {
             </Box>
           </ScrollArea>
         </Box>
-      </Box >
-    </Box >
+      </Box>
+    </Box>
   );
 };
 
