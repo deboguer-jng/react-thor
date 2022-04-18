@@ -2,21 +2,15 @@ import React, { useState } from "react";
 
 import Layout from "../../components/Layout";
 import Heading from "../../components/Heading";
-import {
-  Container,
-  Box,
-  Accordion,
-  AccordionSummary,
-  Typography,
-  AccordionDetails,
-  Button,
-} from "@mui/material";
+import { Container, Box, Typography, Button } from "@mui/material";
 
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import InputSearch from "../../components/Faq/InputSearch";
 import imgPlus from "../../assets/images/plus.png";
 import imgMinus from "../../assets/images/minus.png";
 import imgLine from "../../assets/images/line.png";
+
+import useWindowDimensions from "../../dimension";
+import SearchBar from "../../components/SearchBar";
 
 const data = [
   {
@@ -34,12 +28,8 @@ const data = [
 ];
 
 const Faq = () => {
-  const [expanded, setExpanded] = React.useState(false);
   const [activeTab, setActiveTab] = useState(0);
-
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
+  const { width } = useWindowDimensions();
 
   const handleAccordion = (i) => {
     setActiveTab(i);
@@ -50,7 +40,8 @@ const Faq = () => {
       <Heading title={"faq"} />
 
       <Container maxWidth="md">
-        <InputSearch />
+        {/* <InputSearch /> */}
+        <SearchBar placeholder={"Enter search term..."} />
 
         <Box marginTop={6}>
           {data.map((v, i) => (
@@ -73,7 +64,7 @@ const Faq = () => {
               >
                 <Typography
                   sx={{
-                    fontSize: "20px",
+                    fontSize: width > 700 ? "20px" : "16px",
                     color: "white",
                     fontFamily: "Kanit",
                   }}
@@ -98,7 +89,7 @@ const Faq = () => {
                   }}
                 >
                   <Box>
-                    <img src={imgLine} alt="faq line" />
+                    <img src={imgLine} alt="faq line" height={"100%"} />
                   </Box>
                   <Box marginLeft={2}>
                     <Typography
@@ -107,6 +98,7 @@ const Faq = () => {
                         fontStyle: "italic",
                         fontWeight: "20px",
                         color: "rgba(255, 255, 255, 0.6)",
+                        fontSize: width > 700 ? "20px" : "16px",
                       }}
                     >
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit.

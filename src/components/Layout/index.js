@@ -4,14 +4,17 @@ import { Box, Container } from "@mui/material";
 
 // Components
 import Header from "../Header";
-import LeftSideBar from "../LeftSidebar";
+import LeftSideBar from "../LeftSideBar";
 
 // Images
 import bgImage from "../../assets/images/bg-img.png";
 
 import ScrollArea from "react-scrollbar";
 
+import styles from './style.module.css';
+
 const Layout = ({ children }) => {
+
   return (
     <Box
       sx={{
@@ -29,20 +32,20 @@ const Layout = ({ children }) => {
         <Container>
           <Header />
         </Container>
-        <Box height={"88vh"}>
+        <Box height={"90vh"}>
           <ScrollArea
             speed={0.8}
             contentClassName="content"
             horizontal={false}
             style={{ height: "100%" }}
           >
-            <Box paddingX={4} marginBottom={4}>
+            <Box marginBottom={4}>
               <Container>{children}</Container>
             </Box>
           </ScrollArea>
         </Box>
-      </Box>
-    </Box>
+      </Box >
+    </Box >
   );
 };
 

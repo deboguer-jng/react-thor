@@ -19,9 +19,12 @@ import { MdOutlineArrowDropDown } from "react-icons/md";
 
 import ScrollArea from "react-scrollbar";
 
+import useWindowsDimension from "../../dimension";
+
 const InvestTable = () => {
+  const { width } = useWindowsDimension();
+
   return (
-    // <Container maxWidth="lg">
     <ScrollArea
       speed={0.8}
       contentClassName="content"
@@ -106,21 +109,19 @@ const InvestTable = () => {
                     <Box>
                       <img
                         src={imgAvax}
-                        width="40px"
-                        height={"40px"}
+                        width={width > 700 ? "40px" : "24px"}
+                        height={width > 700 ? "40px" : "24px"}
                         alt="AVAX"
                       />
                     </Box>
                     <Box marginLeft={"10px"}>
                       <Typography
-                        // variant="subtitle1"
                         component="div"
                         sx={{
                           color: "white",
                           fontFamily: "Kanit",
                           fontWeight: 500,
-                          fontSize: "16px",
-                          lineHeight: "22px",
+                          fontSize: width > 700 ? "16px" : "10px",
                         }}
                       >
                         Avalanche
@@ -132,8 +133,7 @@ const InvestTable = () => {
                           color: "white",
                           fontFamily: "Kanit",
                           fontWeight: 300,
-                          fontSize: "14px",
-                          lineHeight: "22px",
+                          fontSize: width > 700 ? "14px" : "12px",
                         }}
                       >
                         AVAX
@@ -143,13 +143,12 @@ const InvestTable = () => {
                 </TableCell>
                 <TableCell>
                   <Typography
-                    variant="subtitle1"
                     component="div"
                     sx={{
+                      fontSize: width > 700 ? "16px" : "12px",
                       color: "white",
                       fontFamily: "Kanit",
                       fontWeight: 300,
-                      marginTop: -1,
                     }}
                   >
                     $76.00
@@ -159,12 +158,12 @@ const InvestTable = () => {
                   <Box sx={{ display: "flex", alignItems: "center" }}>
                     <MdOutlineArrowDropDown color="#ff4d4e" fontSize={28} />
                     <Typography
-                      variant="subtitle1"
                       component="div"
                       sx={{
                         color: "white",
                         fontFamily: "Kanit",
                         fontWeight: 300,
+                        fontSize: width > 700 ? "16px" : "12px",
                       }}
                     >
                       2.11%
@@ -173,13 +172,12 @@ const InvestTable = () => {
                 </TableCell>
                 <TableCell>
                   <Typography
-                    variant="subtitle1"
                     component="div"
                     sx={{
                       color: "#48BB78",
                       fontFamily: "Kanit",
                       fontWeight: 300,
-                      marginTop: -1,
+                      fontSize: width > 700 ? "16px" : "12px",
                     }}
                   >
                     $10,000
@@ -187,13 +185,12 @@ const InvestTable = () => {
                 </TableCell>
                 <TableCell>
                   <Typography
-                    variant="subtitle1"
                     component="div"
                     sx={{
                       color: "white",
                       fontFamily: "Kanit",
                       fontWeight: 300,
-                      marginTop: -1,
+                      fontSize: width > 700 ? "16px" : "12px",
                     }}
                   >
                     69,024.9592
@@ -203,13 +200,12 @@ const InvestTable = () => {
                   <Box display={"flex"} alignItems="center">
                     <Box>
                       <Typography
-                        variant="subtitle1"
                         component="div"
                         sx={{
                           color: "white",
                           fontFamily: "Kanit",
                           fontWeight: 300,
-                          marginTop: -1,
+                          fontSize: width > 700 ? "16px" : "12px",
                         }}
                       >
                         $69,024.9592
@@ -229,7 +225,6 @@ const InvestTable = () => {
         </Table>
       </TableContainer>
     </ScrollArea>
-    // </Container>
   );
 };
 

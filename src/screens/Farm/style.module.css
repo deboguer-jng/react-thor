@@ -3,7 +3,7 @@
   background-color: #232631;
   box-shadow: inset 0px 1px 4px #11141d;
   border-radius: 12px;
-  padding: 15px  70px 15px 20px;
+  padding: 15px 70px 15px 20px;
   border: transparent;
   color: white;
 }
@@ -19,7 +19,7 @@
 
 .roundBorder::before {
   content: "";
-  width: 35%;
+  width: 25%;
   height: 0.5px;
   position: absolute;
   background: rgba(215, 215, 215, 0.2);
@@ -29,11 +29,12 @@
 
 .roundBorder::after {
   content: "";
-  width: 35%;
+  width: 25%;
   height: 0.5px;
   position: absolute;
-  background: rgba(215, 215, 215, 0.2);;
+  background: rgba(215, 215, 215, 0.2);
   top: 0;
   right: 7px;
   border-radius: 10px;
 }
+

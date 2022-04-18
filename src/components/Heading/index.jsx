@@ -8,10 +8,7 @@ import imgRightArrow from "../../assets/images/head-arrows/right.png";
 
 const Heading = ({ title }) => {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{ marginTop: 2,marginBottom: 2 }}
-    >
+    <Container maxWidth="lg" sx={{ marginTop: 2, marginBottom: 2 }}>
       <Box display="flex">
         <Box flex={1}>
           <img src={imgLeftArrow} width={"100%"} alt="left arrow" />

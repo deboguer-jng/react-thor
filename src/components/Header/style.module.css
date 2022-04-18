@@ -1,0 +1,52 @@
+.activeRouteCollapse {
+  height: 40px;
+  background: linear-gradient(90deg, #2e62ff 26.2%, #4b24dc 100%);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.48);
+  display: block;
+  padding: 10px;
+  position: relative;
+  overflow-x: hidden;
+  transition: 0.5s;
+  border-radius: 21px;
+}
+
+.activeRouteCollapse .btnText {
+  color: white;
+}
+
+.activeRouteCollapse .btnIcon {
+  opacity: 1;
+}
+
+.inActiveRouteCollapse {
+  height: 40px;
+  display: block;
+  padding: 0px 10px;
+  position: relative;
+  transition: 0.5s;
+  border-radius: 21px;
+  overflow-x: hidden;
+}
+
+.inActiveRouteCollapse .btnText {
+  color: white;
+  opacity: 0.5;
+}
+
+.inActiveRouteCollapse .btnIcon {
+  opacity: 0.5;
+}
+
+.btnIcon {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.btnText {
+  position: absolute;
+  top: 50%;
+  left: 45px;
+  width: 100px;
+  transform: translateY(-50%);
+}

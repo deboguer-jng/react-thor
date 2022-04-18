@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Typography, IconButton, Button } from "@mui/material";
 import imgCard from "../../../assets/images/cards/box-card3.png";
-import CollectButton from "../../CustomButton";
+import CustomButton from "../../CustomButton";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import ScrollArea from "react-scrollbar";
@@ -278,9 +278,9 @@ const CreateNode = ({ onClick }) => {
 
         <Box sx={{ textAlign: "right", marginTop: 2 }}>
           {total > 1 ? (
-            <CollectButton label="Create Nodes" />
+            <CustomButton label="Create Nodes" />
           ) : (
-            <CollectButton label="Create Node" />
+            <CustomButton label="Create Node" />
           )}
         </Box>
       </Box>

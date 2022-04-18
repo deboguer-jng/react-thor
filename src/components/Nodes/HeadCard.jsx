@@ -7,6 +7,8 @@ import Cards from "./Cards";
 import CustomButton from "../CustomButton";
 import OutlinedButton from "../CustomButton/OutlinedButton";
 
+import styles from "./style.module.css";
+
 const HeadCard = () => {
   return (
     <Container
@@ -19,69 +21,77 @@ const HeadCard = () => {
         marginBottom: 4,
       }}
     >
-      <Box display="flex">
-        <Box flex={1} display="flex" justifyContent={"space-between"}>
+      <Box
+        display="flex"
+        flexDirection={{ xs: "column", sm: "column", md: "column", lg: "row" }}
+      >
+        <Box
+          flex={1}
+          display="flex"
+          flexDirection={{ xs: "row", sm: "row", md: "column" }}
+          justifyContent={{
+            xs: "space-between",
+            sm: "space-between",
+            md: "normal",
+          }}
+        >
           <Box>
-            <Box display={"flex"} alignItems="center">
-              <img src={imgNode} alt="coin" width={"32px"} height={"32px"} />
-              <Typography
-                component="div"
-                color={"white"}
-                fontWeight={500}
-                sx={{
-                  fontFamily: "Kanit",
-                  opacity: 0.5,
-                  marginLeft: 2,
-                  fontSize: "44px",
-                }}
-              >
-                My Nodes
-              </Typography>
-            </Box>
-            <Container maxWidth="md" sx={{ marginLeft: 4 }}>
-              <Typography
-                gutterBottom
-                component="div"
-                sx={{
-                  background:
-                    "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
-                  fontFamily: "Kanit",
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  textFillColor: "transparent",
-                  fontStyle: "normal",
-                  WebkitTextFillColor: "transparent",
-                  lineHeight: "144px",
-                  fontSize: "96px",
-                  fontWeight: 600,
-                }}
-              >
-                8
-              </Typography>
-            </Container>
+            <Typography className={styles.head1} component="div">
+              My Nodes
+            </Typography>
+            <Typography component="div" className={styles.head2}>
+              8
+            </Typography>
           </Box>
           <Box
-            display={"flex"}
-            flexDirection={"column"}
-            justifyContent="flex-end"
+            sx={{
+              width: "296px",
+              height: "0px",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+            }}
+            display={{ xs: "none", sm: "none", md: "block" }}
+          ></Box>
+          <Box
+            marginTop={{ xs: 1, sm: 1, md: 2 }}
+            display="flex"
+            alignItems={{ xs: "flex-end", sm: "flex-end", md: "center" }}
+            flexDirection={{ xs: "column", sm: "column", md: "row" }}
           >
-            <Box marginBottom={2}>
-              <OutlinedButton
-                label={"claim all"}
-                width="124px"
-                fontSize="12px"
-              />
-            </Box>
-            <Box>
-              <OutlinedButton
-                label={"pay all fees"}
-                width="124px"
-                fontSize="12px"
-              />
-            </Box>
+            <Typography
+              component="div"
+              color={"white"}
+              fontWeight={500}
+              sx={{
+                fontFamily: "Kanit",
+                color: "rgba(255, 255, 255, 0.5)",
+                lineHeight: "16px",
+                fontSize: "12px",
+              }}
+            >
+              Total Average Tax
+            </Typography>
+            <Typography
+              component="div"
+              sx={{
+                background:
+                  "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
+                fontFamily: "Kanit",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                textFillColor: "transparent",
+                fontStyle: "normal",
+                WebkitTextFillColor: "transparent",
+                // lineHeight: "144px",
+                fontSize: "16px",
+                fontWeight: 500,
+                marginLeft: "8px",
+              }}
+            >
+              23.5%
+            </Typography>
           </Box>
         </Box>
-        <Box flex={1} paddingX={4}>
+        <Box flex={1}>
           <Cards />
         </Box>
       </Box>
