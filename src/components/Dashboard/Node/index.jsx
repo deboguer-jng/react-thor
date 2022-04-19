@@ -58,9 +58,105 @@ const CreateNode = ({ onClick }) => {
       flexDirection={{ xs: "column", sm: "column", md: "column", lg: "row" }}
     >
       <Box flex={1} sx={{ textAlign: "center" }}>
-        <Button sx={{ paddingY: "0" }} onClick={handleClick}>
-          <img src={imgCard} width="189px" height="265px" alt="card" />
+        <Button
+          sx={{ padding: "0", position: "relative" }}
+          onClick={handleClick}
+          className={styles.btnImage}
+        >
+          <img
+            src={imgCard}
+            className={styles.right}
+            width="176px"
+            height="248px"
+            alt="card"
+          />
+          <img
+            className={styles.left}
+            src={imgCard}
+            width="176px"
+            height="248px"
+            alt="card"
+          />
+          <img
+            src={imgCard}
+            width="189px"
+            height="265px"
+            alt="card"
+            style={{
+              zIndex: 1,
+              boxShadow:
+                "box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.64),0px -1px 32px rgba(222, 191, 112, 0.1)",
+            }}
+          />
         </Button>
+        <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+          <Box sx={{ textAlign: "center" }}>
+            <Typography
+              variant="subtitle1"
+              sx={{
+                color: "white",
+                fontFamily: "Kanit",
+                fontSize: "12px",
+                textAlign: "left",
+                lineHeight: 1,
+              }}
+            >
+              COST
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              sx={{
+                lineHeight: 1,
+                background:
+                  "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
+                fontFamily: "Kanit",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                textFillColor: "transparent",
+                fontStyle: "normal",
+                WebkitTextFillColor: "transparent",
+                fontWeight: 600,
+                marginTop: "4px",
+                fontSize: "24px",
+              }}
+            >
+              12.5
+            </Typography>
+          </Box>
+          <Box sx={{ border: "1px solid #424242" }}></Box>
+          <Box sx={{ textAlign: "center" }}>
+            <Typography
+              variant="subtitle1"
+              sx={{
+                lineHeight: 1,
+                color: "white",
+                fontFamily: "Kanit",
+                fontSize: "12px",
+              }}
+            >
+              REWARDS
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              sx={{
+                lineHeight: 1,
+                background:
+                  "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
+                fontFamily: "Kanit",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                textFillColor: "transparent",
+                fontStyle: "normal",
+                WebkitTextFillColor: "transparent",
+                fontWeight: 600,
+                fontSize: "24px",
+                marginTop: "4px",
+              }}
+            >
+              .144
+            </Typography>
+          </Box>
+        </Box>
       </Box>
       <Box flex={2} sx={{ paddingX: 4, paddingY: 4 }}>
         <Box>
