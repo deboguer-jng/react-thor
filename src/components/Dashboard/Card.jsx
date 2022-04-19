@@ -2,6 +2,7 @@ import React from "react";
 
 import { Box, Grid, Paper, Typography, Container } from "@mui/material";
 import CustomButton from "../CustomButton";
+import ApexChart from "../ApexChart";
 
 import Boxes from "../Boxes";
 
@@ -135,6 +136,7 @@ const CardDouble = ({
                     $77.46
                   </Typography>
                 </Box>
+                {/* <<<<<<< HEAD */}
                 <Box>
                   <Typography
                     variant="body2"
@@ -153,7 +155,9 @@ const CardDouble = ({
               </Box>
             </Container>
           </Box>
-          <img src={image} width={"100%"} />
+          <Box sx={{ height: "96px" }}>
+            <ApexChart />
+          </Box>
         </Box>
       ) : (
         <Box marginTop={"5px"}>
