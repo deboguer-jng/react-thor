@@ -1,15 +1,20 @@
-
 .mainContainer {
   position: relative;
+  padding-top: 52px;
+  padding-bottom: 52px;
 }
 
 .boxContainer {
   position: relative;
   text-align: center;
   filter: brightness(50%);
-  transition: all 0.5s;
+  transition: all 1s;
   /* filter: drop-shadow(0px 12px 14px rgba(0, 0, 0, 0.64))
     drop-shadow(0px -1px 32px rgba(222, 191, 112, 0.1)); */
+}
+
+.parentMainContainer {
+  height: 400px;
 }
 
 .boxContainerCollapse {
@@ -23,35 +28,36 @@
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
+  /* align-items: center; */
   width: 170px;
   display: none;
-  transform: all 0.5s;
+  transform: all 1s;
 }
 
 .btnContainer:hover {
   margin-top: -40px;
+  background-color: transparent !important;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.64))
+    drop-shadow(0px -1px 32px rgba(222, 191, 112, 0.1));
 }
 
 .btnContainer:hover + .childContainer {
-  top: 100%;
+  top: 113%;
   display: flex;
 }
 
-.boxContainer:hover img {
+.btnContainer:hover img {
   width: 189px;
   height: 265px;
 }
 
-.boxContainer:hover {
+.btnContainer:hover {
   filter: brightness(100%);
 }
 
 .btnContainer:hover ~ .boxContainer {
   display: none;
-  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.64))
-    drop-shadow(0px -1px 32px rgba(222, 191, 112, 0.1));
 }
 
 /* .boxContainer img {
@@ -70,6 +76,10 @@
   margin-top: -20px;
 }
 
+.mainChild {
+  background-color: red;
+  transition: all 1s;
+}
 /* --------------- */
 
 /* .mainContainer {
@@ -78,16 +88,8 @@
   overflow: hidden;
 }
 
-.child1 {
-  width: 20%;
-  transition: width 0.6s;
-  overflow-x: hidden;
-}
 
-.mainChild {
-  background-color: red;
-  transition: all 0.5s;
-}
+
 
 .child2Active {
   position: absolute;
