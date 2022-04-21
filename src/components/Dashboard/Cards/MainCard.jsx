@@ -18,6 +18,7 @@ import Slider from "react-slick";
 
 import styles from "../style.module.css";
 import "./slick.css";
+import { getSelectedNode } from "../dashboard.utils";
 
 var settings = {
   dots: false,
@@ -60,27 +61,18 @@ var settings = {
 const images = [imgCard1, imgCard2, imgCard3, imgCard4];
 
 const MainCardDesktop = ({ onClick }) => {
-  const [mainCard, setMainCard] = useState(true);
-  // const [collapse, setCollapse] = useState(false);
-  // const [frontCard, setFrontCard] = useState("");
-
-  const handleClick = () => {
-    onClick(true);
+  const handleClick = (index) => {
+    onClick(index + 1);
   };
-
-  // const handleCard = (i) => {
-  //   console.log(i);
-  // };
-
   return (
     <Box className={styles.parentMainContainer} sx={{ height: "380px" }}>
       <Grid container spacing={2}>
-        {images.map((image) => (
+        {images.map((image, index) => (
           <Grid item xs={3}>
             <Box className={styles.boxContainer}>
               <Button
                 sx={{ padding: 0 }}
-                onClick={handleClick}
+                onClick={() => handleClick(index)}
                 className={styles.btnContainer}
               >
                 <img src={image} alt="card" width={"176px"} height="248px" />
@@ -437,7 +429,7 @@ const MainCardDesktop = ({ onClick }) => {
   );
 };
 
-const MainCardMobile = () => {
+const MainCardMobile = ({ onClick, currentCard }) => {
   const [show, setShow] = useState(false);
   const [value, setValue] = useState(2);
   const [total, setTotal] = useState(1);
@@ -469,7 +461,17 @@ const MainCardMobile = () => {
       }
     }
   };
+  const onClose = () => {
+    setShow(false);
+    onClick(undefined);
+  };
+  const toggleModal = (index) => {
+    setShow(true);
+    onClick(index + 1);
+  };
+  const images = [imgCard1, imgCard2, imgCard3, imgCard4, imgCard3];
 
+  const selectedNode = getSelectedNode(currentCard);
   return (
     <Box
       display={{
@@ -489,7 +491,7 @@ const MainCardMobile = () => {
         textAlign: "center",
       }}
     >
-      <Modal show={show} fullscreen={true} onHide={() => setShow(false)}>
+      <Modal show={show} fullscreen={true} onHide={onClose}>
         <Modal.Body
           style={{
             background: "rgba(13, 16, 27, 0.64)",
@@ -499,7 +501,7 @@ const MainCardMobile = () => {
           }}
         >
           <Box textAlign="right" marginTop={"20px"} marginRight="20px">
-            <IconButton onClick={() => setShow(false)}>
+            <IconButton onClick={onClose}>
               <img src={imgClose} alt="close" width={"20px"} height="20px" />
             </IconButton>
           </Box>
@@ -685,7 +687,7 @@ const MainCardMobile = () => {
                 fontSize: "24px",
               }}
             >
-              21.25 THOR
+              21.25 {selectedNode.name}
             </Typography>
           </Box>
           {total > 0 ? (
@@ -721,7 +723,69 @@ const MainCardMobile = () => {
         </Modal.Body>
       </Modal>
       <Slider {...settings}>
-        <Box paddingX={"5px"} paddingY="30px">
+        {images.map((img, index) => (
+          <Box paddingX={"5px"} paddingY="30px">
+            <Box
+              sx={{ width: "100%", height: "100%", position: "relative" }}
+              onClick={() => toggleModal(index)}
+            >
+              <Box className={styles.mainContainerMobile}>
+                <img src={img} alt="thor" />
+              </Box>
+              <Box className={styles.hiddenContainerMobile}>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontSize: "8px",
+                      background:
+                        "linear-gradient(180deg, #EEEEEE 0%, #D8D8D8 100%)",
+                      backgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    COST
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: "14px",
+                      background:
+                        "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
+                      backgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    12.5
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontSize: "8px",
+                      background:
+                        "linear-gradient(180deg, #EEEEEE 0%, #D8D8D8 100%)",
+                      backgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    REWARDS
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: "14px",
+                      background:
+                        "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
+                      backgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    12.5
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        ))}
+        {/* <Box paddingX={"5px"} paddingY="30px">
           <Box
             sx={{ width: "100%", height: "100%", position: "relative" }}
             onClick={() => setShow(true)}
@@ -1017,7 +1081,7 @@ const MainCardMobile = () => {
               </Box>
             </Box>
           </Box>
-        </Box>
+        </Box> */}
       </Slider>
       {/* <Slider {...settings}>
         <Box paddingX={"5px"}>

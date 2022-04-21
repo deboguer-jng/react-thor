@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Grid, Box } from "@mui/material";
+import { Container, Box } from "@mui/material";
 
 import Layout from "../../components/Layout";
 import Heading from "../../components/Heading";
@@ -59,7 +59,6 @@ var settings = {
 
 function Dashboard() {
   const [mainCard, setMainCard] = useState(false);
-
   return (
     <Layout>
       <Box marginY={"20px"}>
@@ -101,7 +100,7 @@ function Dashboard() {
       </Box>
 
       <Container maxWidth="xl">
-        <MainCardMobile />
+        <MainCardMobile onClick={setMainCard} currentCard={mainCard} />
         <Box
           display={{
             xs: "none",
@@ -111,8 +110,8 @@ function Dashboard() {
           }}
           className={styles.mainContainer}
         >
-          {mainCard ? (
-            <Nodes onClick={setMainCard} />
+          {Boolean(mainCard) ? (
+            <Nodes onClick={setMainCard} currentCard={mainCard} />
           ) : (
             <MainCardDesktop onClick={setMainCard} />
           )}
