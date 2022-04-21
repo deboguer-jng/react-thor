@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { Box, Typography, IconButton, Button } from "@mui/material";
-import imgCard from "../../../assets/images/cards/box-card3.png";
+
 import CustomButton from "../../CustomButton";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import ScrollArea from "react-scrollbar";
 import styles from "../style.module.css";
+import { getSelectedNode } from "../dashboard.utils";
 
-const CreateNode = ({ onClick }) => {
+const CreateNode = ({ onClick, currentCard }) => {
   const [value, setValue] = useState(2);
   const [total, setTotal] = useState(1);
 
-  const handleChange = (event, newValue) => {
-    console.log(newValue);
-    setValue(newValue);
-  };
+  // const handleChange = (event, newValue) => {
+  //   console.log(newValue);
+  //   setValue(newValue);
+  // };
 
   const handleClick = () => {
     onClick(false);
@@ -47,7 +48,7 @@ const CreateNode = ({ onClick }) => {
       }
     }
   };
-
+  const selectedNode = getSelectedNode(currentCard);
   return (
     <Box
       sx={{
@@ -64,7 +65,7 @@ const CreateNode = ({ onClick }) => {
           className={styles.btnImage}
         >
           <img
-            src={imgCard}
+            src={selectedNode.img}
             className={styles.right}
             width="176px"
             height="248px"
@@ -72,13 +73,13 @@ const CreateNode = ({ onClick }) => {
           />
           <img
             className={styles.left}
-            src={imgCard}
+            src={selectedNode.img}
             width="176px"
             height="248px"
             alt="card"
           />
           <img
-            src={imgCard}
+            src={selectedNode.img}
             width="189px"
             height="265px"
             alt="card"
@@ -334,7 +335,7 @@ const CreateNode = ({ onClick }) => {
               fontSize: "20px",
             }}
           >
-            21.25 THOR
+            21.25 {selectedNode.name}
           </Typography>
         </Box>
       </Box>
