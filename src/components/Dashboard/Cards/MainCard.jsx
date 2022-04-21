@@ -68,7 +68,7 @@ const MainCardDesktop = ({ onClick }) => {
     <Box className={styles.parentMainContainer} sx={{ height: "380px" }}>
       <Grid container spacing={2}>
         {images.map((image, index) => (
-          <Grid item xs={3}>
+          <Grid item xs={3} key={index}>
             <Box className={styles.boxContainer}>
               <Button
                 sx={{ padding: 0 }}
@@ -724,7 +724,7 @@ const MainCardMobile = ({ onClick, currentCard }) => {
       </Modal>
       <Slider {...settings}>
         {images.map((img, index) => (
-          <Box paddingX={"5px"} paddingY="30px">
+          <Box paddingX={"5px"} paddingY="30px" key={index}>
             <Box
               sx={{ width: "100%", height: "100%", position: "relative" }}
               onClick={() => toggleModal(index)}
