@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import { useQuery } from "react-query";
-import { fetchHistoricalData } from "../../api/crypto_compare/historicalData";
+import { fetchHistoricalData } from "../../api/crypto_compare_apis";
 
 const InitialOptions = {
   grid: {
