@@ -48,7 +48,7 @@ export const investments = [
   //   investmentAmount: 289003,
   // },
   {
-    protocol: "DAG",
+    Constellation: "DAG",
     coin: "DAG",
     initialValue: 0.185,
     investmentAmount: 250000,
