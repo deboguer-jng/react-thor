@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { Container, Box, Typography, Button, Grid } from "@mui/material";
-import OutlinedButton from "../CustomButton/OutlinedButton";
+import { Container, Box, Typography, Button, Grid } from '@mui/material';
+import OutlinedButton from '../CustomButton/OutlinedButton';
 
-import imgThor from "../../assets/images/LeftBar/Bitmap.png";
+import imgThor from '../../assets/images/LeftBar/Bitmap.png';
 
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown } from 'react-icons/io';
 
-import styles from "./style.module.css";
+import styles from './style.module.css';
 
 const BottomSectionDesktop = () => {
   const [active, setActive] = useState(1);
@@ -16,64 +16,57 @@ const BottomSectionDesktop = () => {
     <Box
       marginTop={4}
       sx={{
-        background:
-          "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
-        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.48)",
-        borderRadius: "10px",
+        background: 'linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)',
+        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.48)',
+        borderRadius: '10px',
         padding: 4,
         paddingTop: 10,
       }}
-      display={{ xs: "none", sm: "none", md: "none", lg: "block" }}
+      display={{ xs: 'none', sm: 'none', md: 'none', lg: 'block' }}
     >
       <Box className={styles.roundBorder}>
         <Container maxWidth="sm">
           <Box
-            width={"236px"}
+            width={'236px'}
             sx={{
-              marginX: "auto",
-              marginTop: "-65px",
+              marginX: 'auto',
+              marginTop: '-65px',
             }}
           >
             <Typography
               marginLeft={2}
               gutterBottom
               sx={{
-                fontFamily: "Kanit",
-                color: "white",
+                fontFamily: 'Kanit',
+                color: 'white',
                 opacity: 0.5,
-                textAlign: "center",
-                fontSize: "14px",
+                textAlign: 'center',
+                fontSize: '14px',
               }}
             >
               Select type
             </Typography>
 
             <Box
-              display={"flex"}
+              display={'flex'}
               justifyContent="space-between"
-              alignItems={"center"}
+              alignItems={'center'}
               sx={{
-                border: "1px solid rgba(255, 255, 255, 0.4)",
-                borderRadius: "48px",
-                paddingX: "10px",
-                paddingY: "5px",
+                border: '1px solid rgba(255, 255, 255, 0.4)',
+                borderRadius: '48px',
+                paddingX: '10px',
+                paddingY: '5px',
               }}
             >
               <Box display="flex" alignItems="center">
-                <img
-                  src={imgThor}
-                  alt="hammer"
-                  style={{ marginTop: "3px" }}
-                  width={"32px"}
-                  height={"32px"}
-                />
+                <img src={imgThor} alt="hammer" style={{ marginTop: '3px' }} width={'32px'} height={'32px'} />
                 <Typography
                   marginLeft={1}
                   variant="subtitle1"
                   sx={{
-                    fontFamily: "Kanit",
-                    color: "white",
-                    fontSize: "14px",
+                    fontFamily: 'Kanit',
+                    color: 'white',
+                    fontSize: '14px',
                   }}
                 >
                   THOR
@@ -85,19 +78,19 @@ const BottomSectionDesktop = () => {
             </Box>
           </Box>
           <Box
-            display={"flex"}
+            display={'flex'}
             justifyContent="space-between"
-            flexDirection={{ xs: "column", sm: "row" }}
+            flexDirection={{ xs: 'column', sm: 'row' }}
             marginTop={4}
           >
             <Box>
               <Typography
                 marginLeft={2}
                 sx={{
-                  fontFamily: "Kanit",
-                  color: "white",
+                  fontFamily: 'Kanit',
+                  color: 'white',
                   opacity: 0.5,
-                  fontSize: "20px",
+                  fontSize: '20px',
                 }}
               >
                 Stacked USD
@@ -106,16 +99,15 @@ const BottomSectionDesktop = () => {
                 marginLeft={2}
                 gutterBottom
                 sx={{
-                  background:
-                    "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
-                  fontFamily: "Kanit",
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  textFillColor: "transparent",
-                  fontStyle: "normal",
-                  WebkitTextFillColor: "transparent",
-                  fontWeight: "bold",
-                  fontSize: "36px",
+                  background: 'linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);',
+                  fontFamily: 'Kanit',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  textFillColor: 'transparent',
+                  fontStyle: 'normal',
+                  WebkitTextFillColor: 'transparent',
+                  fontWeight: 'bold',
+                  fontSize: '36px',
                 }}
               >
                 $6.7M
@@ -125,10 +117,10 @@ const BottomSectionDesktop = () => {
               <Typography
                 marginLeft={2}
                 sx={{
-                  fontFamily: "Kanit",
-                  color: "white",
+                  fontFamily: 'Kanit',
+                  color: 'white',
                   opacity: 0.5,
-                  fontSize: "20px",
+                  fontSize: '20px',
                 }}
               >
                 APR
@@ -138,16 +130,15 @@ const BottomSectionDesktop = () => {
                 variant="h4"
                 gutterBottom
                 sx={{
-                  background:
-                    "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
-                  fontFamily: "Kanit",
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  textFillColor: "transparent",
-                  fontStyle: "normal",
-                  WebkitTextFillColor: "transparent",
-                  fontWeight: "bold",
-                  fontSize: "36px",
+                  background: 'linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);',
+                  fontFamily: 'Kanit',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  textFillColor: 'transparent',
+                  fontStyle: 'normal',
+                  WebkitTextFillColor: 'transparent',
+                  fontWeight: 'bold',
+                  fontSize: '36px',
                 }}
               >
                 390%
@@ -157,13 +148,13 @@ const BottomSectionDesktop = () => {
 
           <Box marginTop={4}>
             <Box
-              maxWidth={"300px"}
+              maxWidth={'300px'}
               sx={{
-                border: "1px solid #5C5C5C",
-                borderRadius: "48px",
-                overflowX: "hidden",
-                display: "flex",
-                marginX: "auto",
+                border: '1px solid #5C5C5C',
+                borderRadius: '48px',
+                overflowX: 'hidden',
+                display: 'flex',
+                marginX: 'auto',
               }}
             >
               <Box flex={1}>
@@ -172,21 +163,15 @@ const BottomSectionDesktop = () => {
                     variant="contained"
                     fullWidth
                     sx={{
-                      borderRadius: "48px",
-                      background:
-                        "linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)",
-                      boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.64)",
+                      borderRadius: '48px',
+                      background: 'linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)',
+                      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.64)',
                     }}
                   >
                     deposit
                   </Button>
                 ) : (
-                  <Button
-                    variant="text"
-                    fullWidth
-                    sx={{ color: "white" }}
-                    onClick={() => setActive(1)}
-                  >
+                  <Button variant="text" fullWidth sx={{ color: 'white' }} onClick={() => setActive(1)}>
                     deposit
                   </Button>
                 )}
@@ -197,21 +182,15 @@ const BottomSectionDesktop = () => {
                     variant="contained"
                     fullWidth
                     sx={{
-                      borderRadius: "48px",
-                      background:
-                        "linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)",
-                      boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.64)",
+                      borderRadius: '48px',
+                      background: 'linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)',
+                      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.64)',
                     }}
                   >
                     withdraw
                   </Button>
                 ) : (
-                  <Button
-                    variant="text"
-                    fullWidth
-                    sx={{ color: "white" }}
-                    onClick={() => setActive(2)}
-                  >
+                  <Button variant="text" fullWidth sx={{ color: 'white' }} onClick={() => setActive(2)}>
                     withdraw
                   </Button>
                 )}
@@ -221,18 +200,14 @@ const BottomSectionDesktop = () => {
 
           <Grid container spacing={2} marginTop={4}>
             <Grid item lg={8} md={8} sm={12} xs={12} position="relative">
-              <input
-                type="text"
-                className={styles.inputStyle}
-                placeholder="Enter amount..."
-              />
-              <Box position={"absolute"} top={"35%"} right={"3%"}>
+              <input type="text" className={styles.inputStyle} placeholder="Enter amount..." />
+              <Box position={'absolute'} top={'35%'} right={'3%'}>
                 <Typography
                   variant="body2"
                   sx={{
-                    color: "white",
-                    fontWeight: "bold",
-                    fontFamily: "Kanit",
+                    color: 'white',
+                    fontWeight: 'bold',
+                    fontFamily: 'Kanit',
                   }}
                 >
                   MAX
@@ -240,10 +215,10 @@ const BottomSectionDesktop = () => {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: "white",
+                    color: 'white',
                     opacity: 0.5,
-                    fontFamily: "Kanit",
-                    marginTop: "-3px",
+                    fontFamily: 'Kanit',
+                    marginTop: '-3px',
                   }}
                 >
                   40.00
@@ -251,11 +226,7 @@ const BottomSectionDesktop = () => {
               </Box>
             </Grid>
             <Grid item lg={4} md={4} sm={12} xs={12}>
-              <OutlinedButton
-                label="Approve"
-                paddingVertical={"10px"}
-                paddingHorizontal="40px"
-              />
+              <OutlinedButton label="Approve" paddingVertical={'10px'} paddingHorizontal="40px" />
             </Grid>
           </Grid>
         </Container>
@@ -271,59 +242,53 @@ const BottomSectionMobile = () => {
     <Box
       marginTop={4}
       sx={{
-        background:
-          "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
-        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.48)",
-        borderRadius: "10px",
+        background: 'linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)',
+        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.48)',
+        borderRadius: '10px',
         padding: 4,
         paddingTop: 10,
       }}
-      display={{ xs: "block", sm: "block", md: "block", lg: "none" }}
+      display={{ xs: 'block', sm: 'block', md: 'block', lg: 'none' }}
     >
       <Box className={styles.roundBorderMobile}>
         <Box
           sx={{
-            width: "48%",
-            height: "24px",
-            marginX: "auto",
-            marginTop: "-30px",
-            borderRadius: "48px",
-            border: "1px solid rgba(255, 255, 255, 0.4)",
-            padding: "5px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            width: '48%',
+            height: '24px',
+            marginX: 'auto',
+            marginTop: '-30px',
+            borderRadius: '48px',
+            border: '1px solid rgba(255, 255, 255, 0.4)',
+            padding: '5px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
           }}
         >
           <img src={imgThor} alt="thor" width="16px" height="16px" />
           <Typography
             sx={{
-              fontFamily: "Kanit",
-              color: "white",
-              fontSize: "10px",
+              fontFamily: 'Kanit',
+              color: 'white',
+              fontSize: '10px',
               fontWeight: 500,
-              lineHeight: "14px",
+              lineHeight: '14px',
             }}
           >
             THOR - AVAX
           </Typography>
-          <IoIosArrowDown color="white" fontSize={"16px"} />
+          <IoIosArrowDown color="white" fontSize={'16px'} />
         </Box>
         <Container maxWidth="sm">
-          <Box
-            display={"flex"}
-            justifyContent="space-between"
-            alignItems={"center"}
-            marginTop="20px"
-          >
-            <Box sx={{ flex: 1, textAlign: "center" }}>
+          <Box display={'flex'} justifyContent="space-between" alignItems={'center'} marginTop="20px">
+            <Box sx={{ flex: 1, textAlign: 'center' }}>
               <Box>
                 <Typography
                   sx={{
-                    fontFamily: "Kanit",
-                    color: "white",
+                    fontFamily: 'Kanit',
+                    color: 'white',
                     opacity: 0.5,
-                    fontSize: "10px",
+                    fontSize: '10px',
                     fontWeight: 400,
                   }}
                 >
@@ -332,30 +297,29 @@ const BottomSectionMobile = () => {
                 <Typography
                   gutterBottom
                   sx={{
-                    background:
-                      "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
-                    fontFamily: "Kanit",
-                    backgroundClip: "text",
-                    WebkitBackgroundClip: "text",
-                    textFillColor: "transparent",
-                    fontStyle: "normal",
-                    WebkitTextFillColor: "transparent",
-                    fontWeight: "bold",
-                    fontSize: "24px",
+                    background: 'linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);',
+                    fontFamily: 'Kanit',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    textFillColor: 'transparent',
+                    fontStyle: 'normal',
+                    WebkitTextFillColor: 'transparent',
+                    fontWeight: 'bold',
+                    fontSize: '24px',
                   }}
                 >
                   $6.7M
                 </Typography>
               </Box>
             </Box>
-            <Box sx={{ flex: 1, textAlign: "center" }}>
+            <Box sx={{ flex: 1, textAlign: 'center' }}>
               <Box>
                 <Typography
                   sx={{
-                    fontFamily: "Kanit",
-                    color: "white",
+                    fontFamily: 'Kanit',
+                    color: 'white',
                     opacity: 0.5,
-                    fontSize: "10px",
+                    fontSize: '10px',
                     fontWeight: 400,
                   }}
                 >
@@ -364,16 +328,15 @@ const BottomSectionMobile = () => {
                 <Typography
                   gutterBottom
                   sx={{
-                    background:
-                      "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
-                    fontFamily: "Kanit",
-                    backgroundClip: "text",
-                    WebkitBackgroundClip: "text",
-                    textFillColor: "transparent",
-                    fontStyle: "normal",
-                    WebkitTextFillColor: "transparent",
-                    fontWeight: "bold",
-                    fontSize: "24px",
+                    background: 'linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);',
+                    fontFamily: 'Kanit',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    textFillColor: 'transparent',
+                    fontStyle: 'normal',
+                    WebkitTextFillColor: 'transparent',
+                    fontWeight: 'bold',
+                    fontSize: '24px',
                   }}
                 >
                   390%
@@ -383,13 +346,13 @@ const BottomSectionMobile = () => {
           </Box>
           <Box marginTop={2}>
             <Box
-              maxWidth={"300px"}
+              maxWidth={'300px'}
               sx={{
-                border: "1px solid #5C5C5C",
-                borderRadius: "48px",
-                overflowX: "hidden",
-                display: "flex",
-                marginX: "auto",
+                border: '1px solid #5C5C5C',
+                borderRadius: '48px',
+                overflowX: 'hidden',
+                display: 'flex',
+                marginX: 'auto',
               }}
             >
               <Box flex={1}>
@@ -398,11 +361,10 @@ const BottomSectionMobile = () => {
                     variant="contained"
                     fullWidth
                     sx={{
-                      borderRadius: "48px",
-                      background:
-                        "linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)",
-                      boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.64)",
-                      fontSize: "10px",
+                      borderRadius: '48px',
+                      background: 'linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)',
+                      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.64)',
+                      fontSize: '10px',
                     }}
                   >
                     deposit
@@ -411,7 +373,7 @@ const BottomSectionMobile = () => {
                   <Button
                     variant="text"
                     fullWidth
-                    sx={{ color: "white", fontSize: "10px" }}
+                    sx={{ color: 'white', fontSize: '10px' }}
                     onClick={() => setActive(1)}
                   >
                     deposit
@@ -424,11 +386,10 @@ const BottomSectionMobile = () => {
                     variant="contained"
                     fullWidth
                     sx={{
-                      borderRadius: "48px",
-                      background:
-                        "linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)",
-                      boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.64)",
-                      fontSize: "10px",
+                      borderRadius: '48px',
+                      background: 'linear-gradient(91.33deg, #2E62FF 19.49%, #4A28DE 88.25%)',
+                      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.64)',
+                      fontSize: '10px',
                     }}
                   >
                     withdraw
@@ -437,7 +398,7 @@ const BottomSectionMobile = () => {
                   <Button
                     variant="text"
                     fullWidth
-                    sx={{ color: "white", fontSize: "10px" }}
+                    sx={{ color: 'white', fontSize: '10px' }}
                     onClick={() => setActive(2)}
                   >
                     withdraw
@@ -447,29 +408,25 @@ const BottomSectionMobile = () => {
             </Box>
           </Box>
           <Box marginTop={2} position="relative">
-            <input
-              type="text"
-              className={styles.inputStyle}
-              placeholder="Enter amount..."
-            />
-            <Box position={"absolute"} top={"20%"} right={"3%"} textAlign="end">
+            <input type="text" className={styles.inputStyle} placeholder="Enter amount..." />
+            <Box position={'absolute'} top={'20%'} right={'3%'} textAlign="end">
               <Typography
                 sx={{
-                  color: "white",
-                  fontWeight: "bold",
-                  fontFamily: "Kanit",
-                  fontSize: "8px",
+                  color: 'white',
+                  fontWeight: 'bold',
+                  fontFamily: 'Kanit',
+                  fontSize: '8px',
                 }}
               >
                 MAX
               </Typography>
               <Typography
                 sx={{
-                  color: "white",
+                  color: 'white',
                   opacity: 0.5,
-                  fontFamily: "Kanit",
-                  marginTop: "-3px",
-                  fontSize: "10px",
+                  fontFamily: 'Kanit',
+                  marginTop: '-3px',
+                  fontSize: '10px',
                 }}
               >
                 40.00
@@ -477,23 +434,17 @@ const BottomSectionMobile = () => {
             </Box>
           </Box>
           <Box marginTop="10px">
-            <OutlinedButton
-              label="Approve"
-              paddingVertical={"10px"}
-              paddingHorizontal="40px"
-              fullWidth
-            />
+            <OutlinedButton label="Approve" paddingVertical={'10px'} paddingHorizontal="40px" fullWidth />
           </Box>
-          <Box textAlign={"center"} marginTop={2}>
+          <Box textAlign={'center'} marginTop={2}>
             <Typography
               sx={{
-                fontFamily: "Kanit",
-                fontSize: "12px",
+                fontFamily: 'Kanit',
+                fontSize: '12px',
                 fontWeight: 400,
-                background:
-                  "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%)",
-                backgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                background: 'linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%)',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
               }}
             >
               Buy THOR-AVAX
