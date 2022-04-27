@@ -1,6 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import { Container, Box, Typography, Button, Grid } from "@mui/material";
+import {
+  Container,
+  Box,
+  Typography,
+  Button,
+  Grid,
+  Select,
+  MenuItem,
+  FormControl,
+} from "@mui/material";
 import OutlinedButton from "../CustomButton/OutlinedButton";
 
 import imgThor from "../../assets/images/LeftBar/Bitmap.png";
@@ -11,6 +20,18 @@ import styles from "./style.module.css";
 
 const BottomSectionDesktop = () => {
   const [active, setActive] = useState(1);
+  const [farmType, setFarmType] = useState("thor");
+  const [approved, setApproved] = useState(false);
+
+  const handleFarmTypeChange = (e) => {
+    setFarmType(e.target.value);
+  };
+
+  const getThorApproved = () => {
+    // const
+  };
+
+  useEffect(() => {}, []);
 
   return (
     <Box
@@ -47,42 +68,68 @@ const BottomSectionDesktop = () => {
             >
               Select type
             </Typography>
-
-            <Box
-              display={"flex"}
-              justifyContent="space-between"
-              alignItems={"center"}
-              sx={{
-                border: "1px solid rgba(255, 255, 255, 0.4)",
-                borderRadius: "48px",
-                paddingX: "10px",
-                paddingY: "5px",
-              }}
-            >
-              <Box display="flex" alignItems="center">
-                <img
-                  src={imgThor}
-                  alt="hammer"
-                  style={{ marginTop: "3px" }}
-                  width={"32px"}
-                  height={"32px"}
-                />
-                <Typography
-                  marginLeft={1}
-                  variant="subtitle1"
-                  sx={{
-                    fontFamily: "Kanit",
-                    color: "white",
-                    fontSize: "14px",
-                  }}
-                >
-                  THOR
-                </Typography>
-              </Box>
-              <Box>
-                <IoIosArrowDown color="white" />
-              </Box>
-            </Box>
+            <FormControl sx={{ width: "100%" }} size="small">
+              <Select
+                labelId="demo-simple-select-label"
+                value={farmType}
+                MenuProps={{
+                  PaperProps: {
+                    sx: {
+                      background:
+                        "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
+                    },
+                  },
+                }}
+                onChange={handleFarmTypeChange}
+                sx={{
+                  border: "1px solid rgba(255, 255, 255, 0.4)",
+                  borderRadius: "2rem",
+                }}
+              >
+                <MenuItem value="thor">
+                  <Box display="flex" alignItems="center">
+                    <img
+                      src={imgThor}
+                      alt="hammer"
+                      width={"32px"}
+                      height={"32px"}
+                    />
+                    <Typography
+                      marginLeft={1}
+                      variant="subtitle1"
+                      sx={{
+                        fontFamily: "Kanit",
+                        color: "white",
+                        fontSize: "14px",
+                      }}
+                    >
+                      THOR
+                    </Typography>
+                  </Box>
+                </MenuItem>
+                <MenuItem value="thor-avax">
+                  <Box display="flex" alignItems="center">
+                    <img
+                      src={imgThor}
+                      alt="hammer"
+                      width={"32px"}
+                      height={"32px"}
+                    />
+                    <Typography
+                      marginLeft={1}
+                      variant="subtitle1"
+                      sx={{
+                        fontFamily: "Kanit",
+                        color: "white",
+                        fontSize: "14px",
+                      }}
+                    >
+                      THOR-AVAX
+                    </Typography>
+                  </Box>
+                </MenuItem>
+              </Select>
+            </FormControl>
           </Box>
           <Box
             display={"flex"}
@@ -253,7 +300,7 @@ const BottomSectionDesktop = () => {
             <Grid item lg={4} md={4} sm={12} xs={12}>
               <OutlinedButton
                 label="Approve"
-                paddingVertical={"10px"}
+                paddingVertical={"13px"}
                 paddingHorizontal="40px"
               />
             </Grid>
