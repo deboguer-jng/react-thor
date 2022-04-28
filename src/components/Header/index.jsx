@@ -24,11 +24,7 @@ import imgHumburger from '../../assets/images/humburger.png';
 import styles from './style.module.css';
 
 // for wallet connect
-import {
-  InjectedConnector,
-  NoEthereumProviderError,
-  UserRejectedRequestError,
-} from '@web3-react/injected-connector';
+import { InjectedConnector, NoEthereumProviderError, UserRejectedRequestError } from '@web3-react/injected-connector';
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
 import { FortmaticConnector } from '@web3-react/fortmatic-connector';
 import { setWeb3Provider } from '../../contracts/getContract';
@@ -37,19 +33,23 @@ import { useStyles } from '../../theme/styles/components/connectWalletStyles';
 import { walletList } from '../../utils/web3Connectors';
 import { conciseAddress } from '../../utils/formattingFunctions';
 import { useSnackbar, useLoading, useWeb3, useTheme, useJWT } from '../../hooks';
+import { useDispatch, useSelector } from 'react-redux';
+import { storeWeb3Context } from '../../redux';
 
 const Header = () => {
   const classes = useStyles();
   const web3context = useWeb3React();
+  const dispatch = useDispatch();
+  const web3contextRedux = useSelector((state) => state.web3.web3context);
   const { showSnackbarF } = useSnackbar();
   const { setLoadingF, loading } = useLoading();
-  const { storeWeb3ContextF } = useWeb3();
+  // const { storeWeb3ContextF } = useWeb3();
   const { theme } = useTheme();
   const { getJWTF } = useJWT();
 
   const [open, setOpen] = useState(false);
 
-  const getErrorMessage = e => {
+  const getErrorMessage = (e) => {
     if (e instanceof UnsupportedChainIdError) {
       return 'Unsupported Network';
     } else if (e instanceof NoEthereumProviderError) {
@@ -81,23 +81,23 @@ const Header = () => {
           connector
             ? connector
             : new InjectedConnector({
-                supportedChainIds: [1, 3, 4, 5, 42],
+                supportedChainIds: [1, 3, 4, 5, 42, 43113, 43114],
               }),
           undefined,
-          true
+          true,
         )
         .then(() => {
           setLoadingF({ walletConnection: false });
           //getJWTF(web3context.account, Date.now());
         })
-        .catch(e => {
+        .catch((e) => {
           const err = getErrorMessage(e);
           showSnackbarF({ message: err, severity: 'error' });
           console.error('ERROR activateWallet -> ', e);
           setLoadingF({ walletConnection: false });
         });
     },
-    [web3context, loading]
+    [web3context, loading],
   );
 
   useEffect(() => {
@@ -107,14 +107,11 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    storeWeb3ContextF(web3context);
-    if (web3context?.library?._provider) {
-      //console.log(web3context.library._provider);
-      setWeb3Provider(web3context.library._provider);
-    }
     if (web3context?.error) {
       web3context.deactivate();
     }
+    dispatch(storeWeb3Context(web3context));
+
     if (web3context.active || web3context.account) {
       setOpen(false);
     }

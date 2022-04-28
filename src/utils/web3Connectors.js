@@ -15,20 +15,23 @@ import { VALID_CHAIN } from '../config/constants';
 
 const REACT_APP_NETWORK_URL1 = `https://mainnet.infura.io/v3/${process.env.REACT_APP_INFURA_KEY}`;
 const REACT_APP_NETWORK_URL4 = `https://rinkeby.infura.io/v3/${process.env.REACT_APP_INFURA_KEY}`;
-
+const REACT_APP_NETWORK_URL43114 = 'https://api.avax.network/ext/bc/C/rpc';
+const REACT_APP_NETWORK_URL43113 = 'https://api.avax-test.network/ext/bc/C/rpc';
 const POLLING_INTERVAL = 12000;
 
 const RPC_URLS = {
   1: REACT_APP_NETWORK_URL1,
   4: REACT_APP_NETWORK_URL4,
+  43113: REACT_APP_NETWORK_URL43113,
+  43114: REACT_APP_NETWORK_URL43114,
 };
 
 export const injected = new InjectedConnector({
-  supportedChainIds: [1, 3, 4, 5, 42],
+  supportedChainIds: [1, 3, 4, 5, 42, 43113, 43114],
 });
 
 export const walletconnect = new WalletConnectConnector({
-  rpc: { 1: RPC_URLS[1], 4: RPC_URLS[4] },
+  rpc: { 1: RPC_URLS[1], 4: RPC_URLS[4], 43113: RPC_URLS[43113], 43114: RPC_URLS[43114] },
   bridge: 'https://bridge.walletconnect.org',
   qrcode: true,
   pollingInterval: POLLING_INTERVAL,
