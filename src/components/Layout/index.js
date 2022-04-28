@@ -4,7 +4,7 @@ import { Box, Container } from '@mui/material';
 
 // Components
 import Header from '../Header';
-import LeftSideBar from '../LeftSideBar';
+import LeftSideBar from '../LeftSidebar';
 
 // Images
 import bgImage from '../../assets/images/bg-img.png';
