@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   Box,
@@ -20,7 +20,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 import { MdOutlineArrowDropDown, MdOutlineArrowDropUp } from "react-icons/md";
 
-import ScrollArea from "react-scrollbar";
+import ScrollArea from 'react-scrollbar';
 
 import useWindowsDimension from "../../dimension";
 import { fetchSingleSymbolPrice } from "../../api/crypto_compare_apis";
@@ -185,14 +185,13 @@ const InvestTable = () => {
       speed={0.8}
       contentClassName="content"
       horizontal={true}
-      style={{ width: "100%", height: "35vh", borderRadius: "12px" }}
+      style={{ width: '100%', height: '35vh', borderRadius: '12px' }}
     >
-      <TableContainer style={{ borderRadius: "12px", width: "100%" }}>
+      <TableContainer style={{ borderRadius: '12px', width: '100%' }}>
         <Table
           style={{
-            background:
-              "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
-            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.48)",
+            background: 'linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)',
+            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.48)',
           }}
           sx={{
             minWidth: 700,
@@ -203,9 +202,9 @@ const InvestTable = () => {
             <TableRow>
               <TableCell
                 sx={{
-                  fontWeight: "500",
-                  color: "rgba(151,155,172,0.5)",
-                  fontFamily: "Kanit",
+                  fontWeight: '500',
+                  color: 'rgba(151,155,172,0.5)',
+                  fontFamily: 'Kanit',
                 }}
               >
                 Name
@@ -213,8 +212,8 @@ const InvestTable = () => {
               <TableCell
                 sx={{
                   fontWeight: 500,
-                  fontFamily: "Kanit",
-                  color: "rgba(151,155,172,0.5)",
+                  fontFamily: 'Kanit',
+                  color: 'rgba(151,155,172,0.5)',
                 }}
               >
                 Price
@@ -222,8 +221,8 @@ const InvestTable = () => {
               <TableCell
                 sx={{
                   fontWeight: 500,
-                  color: "rgba(151,155,172,0.5)",
-                  fontFamily: "Kanit",
+                  color: 'rgba(151,155,172,0.5)',
+                  fontFamily: 'Kanit',
                 }}
               >
                 Change
@@ -231,8 +230,8 @@ const InvestTable = () => {
               <TableCell
                 sx={{
                   fontWeight: 500,
-                  fontFamily: "Kanit",
-                  color: "rgba(151,155,172,0.5)",
+                  fontFamily: 'Kanit',
+                  color: 'rgba(151,155,172,0.5)',
                 }}
               >
                 P/L
@@ -240,8 +239,8 @@ const InvestTable = () => {
               <TableCell
                 sx={{
                   fontWeight: 500,
-                  fontFamily: "Kanit",
-                  color: "rgba(151,155,172,0.5)",
+                  fontFamily: 'Kanit',
+                  color: 'rgba(151,155,172,0.5)',
                 }}
               >
                 Investment ($)
@@ -249,8 +248,8 @@ const InvestTable = () => {
               <TableCell
                 sx={{
                   fontWeight: 500,
-                  fontFamily: "Kanit",
-                  color: "rgba(151,155,172,0.5)",
+                  fontFamily: 'Kanit',
+                  color: 'rgba(151,155,172,0.5)',
                 }}
               >
                 Amount

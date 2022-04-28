@@ -1,24 +1,21 @@
-import React, { useState } from "react";
-import { Container, Box } from "@mui/material";
+import React, { useState } from 'react';
+import { Container, Box } from '@mui/material';
 
-import Layout from "../../components/Layout";
-import Heading from "../../components/Heading";
-import Card from "../../components/Dashboard/Card";
-import Nodes from "../../components/Dashboard/Node";
-import {
-  MainCardDesktop,
-  MainCardMobile,
-} from "../../components/Dashboard/Cards/MainCard";
+import Layout from '../../components/Layout';
+import Heading from '../../components/Heading';
+import Card from '../../components/Dashboard/Card';
+import Nodes from '../../components/Dashboard/Node';
+import { MainCardDesktop, MainCardMobile } from '../../components/Dashboard/Cards/MainCard';
 
-import imgGraph from "../../assets/images/updown-graph.png";
-import imgCup from "../../assets/images/cup.png";
-import imgDollar from "../../assets/images/dollar.png";
-import imgEarth from "../../assets/images/earth.png";
+import imgGraph from '../../assets/images/updown-graph.png';
+import imgCup from '../../assets/images/cup.png';
+import imgDollar from '../../assets/images/dollar.png';
+import imgEarth from '../../assets/images/earth.png';
 
-import Slider from "react-slick";
+import Slider from 'react-slick';
 
-import styles from "../../components/Dashboard/style.module.css";
-import "./slick.css";
+import styles from '../../components/Dashboard/style.module.css';
+import './slick.css';
 
 var settings = {
   dots: true,
@@ -28,7 +25,7 @@ var settings = {
   slidesToScroll: 3,
   initialSlide: 0,
   arrows: false,
-  dotsClass: "button__bar",
+  dotsClass: 'button__bar',
   responsive: [
     {
       breakpoint: 1024,
@@ -61,20 +58,15 @@ function Dashboard() {
   const [mainCard, setMainCard] = useState(false);
   return (
     <Layout>
-      <Box marginY={"20px"}>
-        <Heading title={"dashboard"} />
+      <Box marginY={'20px'}>
+        <Heading title={'dashboard'} />
       </Box>
       <Container maxWidth="xl">
         <Slider {...settings}>
-          <Box paddingX={"10px"}>
-            <Card
-              title="Rewards"
-              number="32.111"
-              btnLabel="collect all"
-              icon={imgCup}
-            />
+          <Box paddingX={'10px'}>
+            <Card title="Rewards" number="32.111" btnLabel="collect all" icon={imgCup} />
           </Box>
-          <Box paddingX={"10px"}>
+          <Box paddingX={'10px'}>
             <Card
               title="Thor Price"
               noBoxes={true}
@@ -84,29 +76,23 @@ function Dashboard() {
               btnLabel="view chart"
             />
           </Box>
-          <Box paddingX={"10px"}>
-            <Card
-              title="My Nodes"
-              number="8"
-              btnLabel="view nodes"
-              icon={imgEarth}
-              hideHover={true}
-            />
+          <Box paddingX={'10px'}>
+            <Card title="My Nodes" number="8" btnLabel="view nodes" icon={imgEarth} hideHover={true} />
           </Box>
         </Slider>
       </Container>
-      <Box marginY={"20px"}>
-        <Heading title={"create node"} />
+      <Box marginY={'20px'}>
+        <Heading title={'create node'} />
       </Box>
 
       <Container maxWidth="xl">
         <MainCardMobile onClick={setMainCard} currentCard={mainCard} />
         <Box
           display={{
-            xs: "none",
-            sm: "none",
-            md: "none",
-            lg: "block",
+            xs: 'none',
+            sm: 'none',
+            md: 'none',
+            lg: 'block',
           }}
           className={styles.mainContainer}
         >

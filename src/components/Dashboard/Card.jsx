@@ -1,73 +1,57 @@
-import React from "react";
+import React from 'react';
 
-import { Box, Grid, Paper, Typography, Container } from "@mui/material";
-import CustomButton from "../CustomButton";
-import ApexChart from "../ApexChart";
+import { Box, Grid, Paper, Typography, Container } from '@mui/material';
+import CustomButton from '../CustomButton';
+import ApexChart from '../ApexChart';
 
-import Boxes from "../Boxes";
+import Boxes from '../Boxes';
 
-import useWindowDimensions from "../../dimension";
+import useWindowDimensions from '../../dimension';
 
-const CardDouble = ({
-  title,
-  number,
-  noBoxes,
-  image,
-  btnLabel,
-  icon,
-  hideHover,
-}) => {
+const CardDouble = ({ title, number, noBoxes, image, btnLabel, icon, hideHover }) => {
   const { width } = useWindowDimensions();
   return (
     <Box
       sx={{
-        width: "100%",
-        height: "268px",
-        background:
-          "linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)",
-        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.48)",
-        borderRadius: "10px",
+        width: '100%',
+        height: '268px',
+        background: 'linear-gradient(92.91deg, rgba(19, 22, 30, 0.76) 1.78%, rgba(19, 22, 30, 0.62) 99.64%)',
+        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.48)',
+        borderRadius: '10px',
         padding: 2,
       }}
     >
       <Grid
-        style={{ justifyContent: "space-between", display: "flex" }}
-        flexDirection={{ xs: "row", sm: "column", md: "row" }}
+        style={{ justifyContent: 'space-between', display: 'flex' }}
+        flexDirection={{ xs: 'row', sm: 'column', md: 'row' }}
       >
-        <Box style={{ display: "flex" }}>
+        <Box style={{ display: 'flex' }}>
           {width > 700 ? (
             <Box
               style={{
-                width: "40px",
-                height: "40px",
+                width: '40px',
+                height: '40px',
                 borderRadius: 15,
-                backgroundColor: "#333746",
-                alignItems: "center",
-                justifyContent: "center",
-                display: "flex",
+                backgroundColor: '#333746',
+                alignItems: 'center',
+                justifyContent: 'center',
+                display: 'flex',
               }}
             >
-              <img
-                style={{ width: "24px", height: "24px" }}
-                src={icon}
-                alt="img"
-              />
+              <img style={{ width: '24px', height: '24px' }} src={icon} alt="img" />
             </Box>
           ) : null}
 
-          <Box
-            marginLeft={width > 700 ? "10px" : "0px"}
-            marginTop={width > 700 ? "10px" : "0px"}
-          >
+          <Box marginLeft={width > 700 ? '10px' : '0px'} marginTop={width > 700 ? '10px' : '0px'}>
             <Typography
               component="div"
               style={{
-                color: "white",
-                fontFamily: "Kanit",
-                fontStyle: "normal",
-                fontWeight: "bold",
-                fontSize: width > 700 ? "20px" : "16px",
-                lineHeight: "30px",
+                color: 'white',
+                fontFamily: 'Kanit',
+                fontStyle: 'normal',
+                fontWeight: 'bold',
+                fontSize: width > 700 ? '20px' : '16px',
+                lineHeight: '30px',
                 opacity: 0.5,
               }}
             >
@@ -78,16 +62,15 @@ const CardDouble = ({
               gutterBottom
               component="div"
               sx={{
-                background:
-                  "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
-                fontFamily: "Kanit",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                textFillColor: "transparent",
-                fontStyle: "normal",
-                WebkitTextFillColor: "transparent",
+                background: 'linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);',
+                fontFamily: 'Kanit',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                textFillColor: 'transparent',
+                fontStyle: 'normal',
+                WebkitTextFillColor: 'transparent',
                 fontWeight: 600,
-                fontSize: width > 700 ? "48px" : "40px",
+                fontSize: width > 700 ? '48px' : '40px',
               }}
             >
               {number}
@@ -101,18 +84,18 @@ const CardDouble = ({
       {noBoxes ? (
         <Box>
           <Box>
-            <Container maxWidth={"xl?"}>
-              <Box display={"flex"} justifyContent="space-between">
-                <Box display={"flex"} alignItems="center">
+            <Container maxWidth={'xl?'}>
+              <Box display={'flex'} justifyContent="space-between">
+                <Box display={'flex'} alignItems="center">
                   <Typography
                     variant="body2"
                     component="div"
                     style={{
-                      color: "white",
-                      fontFamily: "Kanit",
-                      fontStyle: "normal",
+                      color: 'white',
+                      fontFamily: 'Kanit',
+                      fontStyle: 'normal',
                       fontWeight: 500,
-                      lineHeight: "30px",
+                      lineHeight: '30px',
                     }}
                   >
                     AVAX
@@ -121,16 +104,15 @@ const CardDouble = ({
                     variant="body2"
                     component="div"
                     sx={{
-                      background:
-                        "linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);",
-                      fontFamily: "Kanit",
-                      backgroundClip: "text",
-                      WebkitBackgroundClip: "text",
-                      textFillColor: "transparent",
-                      fontStyle: "normal",
-                      WebkitTextFillColor: "transparent",
+                      background: 'linear-gradient(112.98deg, #FFF4D1 8.47%, #F5D28F 23.3%, #675537 91.31%);',
+                      fontFamily: 'Kanit',
+                      backgroundClip: 'text',
+                      WebkitBackgroundClip: 'text',
+                      textFillColor: 'transparent',
+                      fontStyle: 'normal',
+                      WebkitTextFillColor: 'transparent',
                       fontWeight: 600,
-                      marginLeft: "10px",
+                      marginLeft: '10px',
                     }}
                   >
                     $77.46
@@ -142,11 +124,11 @@ const CardDouble = ({
                     variant="body2"
                     component="div"
                     style={{
-                      color: "white",
-                      fontFamily: "Kanit",
-                      fontStyle: "normal",
+                      color: 'white',
+                      fontFamily: 'Kanit',
+                      fontStyle: 'normal',
                       fontWeight: 500,
-                      lineHeight: "30px",
+                      lineHeight: '30px',
                     }}
                   >
                     +25%
@@ -155,12 +137,12 @@ const CardDouble = ({
               </Box>
             </Container>
           </Box>
-          <Box sx={{ height: "96px" }}>
+          <Box sx={{ height: '96px' }}>
             <ApexChart />
           </Box>
         </Box>
       ) : (
-        <Box marginTop={"5px"}>
+        <Box marginTop={'5px'}>
           <Boxes hideHover={hideHover} />
         </Box>
       )}
