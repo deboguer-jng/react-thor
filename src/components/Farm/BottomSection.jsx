@@ -8,18 +8,34 @@ import imgThor from '../../assets/images/LeftBar/Bitmap.png';
 import { IoIosArrowDown } from 'react-icons/io';
 
 import styles from './style.module.css';
+import { useApprove, useGetAllowance, useGetUserInfo } from '../../hooks/farm';
+import { pools } from '../../utils/farm';
+import BigNumber from 'bignumber.js';
 
 const BottomSectionDesktop = () => {
+  const [farmType, setFarmType] = useState('0');
+  const [poolConfig, setPoolConfig] = useState(pools[0]);
   const [active, setActive] = useState(1);
-  const [farmType, setFarmType] = useState('thor');
   const [approved, setApproved] = useState(false);
+  const allowance = useGetAllowance(poolConfig.address);
+  const { onApprove, isApproving } = useApprove(poolConfig.address);
+  const userInfo = useGetUserInfo(poolConfig.pid);
+
+  const isAllowed = allowance.data && new BigNumber(allowance.data).isGreaterThan(0);
 
   const handleFarmTypeChange = (e) => {
+    setPoolConfig(pools[parseInt(e.target.value)]);
     setFarmType(e.target.value);
   };
 
   const getThorApproved = () => {
     // const
+  };
+
+  const handleClaim = () => {
+    if (!isAllowed) {
+      onApprove();
+    }
   };
 
   useEffect(() => {}, []);
@@ -76,7 +92,7 @@ const BottomSectionDesktop = () => {
                   borderRadius: '2rem',
                 }}
               >
-                <MenuItem value="thor">
+                <MenuItem value={'0'}>
                   <Box display="flex" alignItems="center">
                     <img src={imgThor} alt="hammer" width={'32px'} height={'32px'} />
                     <Typography
@@ -92,7 +108,7 @@ const BottomSectionDesktop = () => {
                     </Typography>
                   </Box>
                 </MenuItem>
-                <MenuItem value="thor-avax">
+                <MenuItem value={'1'}>
                   <Box display="flex" alignItems="center">
                     <img src={imgThor} alt="hammer" width={'32px'} height={'32px'} />
                     <Typography
@@ -260,7 +276,9 @@ const BottomSectionDesktop = () => {
               </Box>
             </Grid>
             <Grid item lg={4} md={4} sm={12} xs={12}>
-              <OutlinedButton label="Approve" paddingVertical={'13px'} paddingHorizontal="40px" />
+              <OutlinedButton paddingVertical={'13px'} paddingHorizontal="40px" onClick={handleClaim}>
+                {isAllowed ? (active === 1 ? 'Deposit' : 'Withdraw') : 'Approve'}
+              </OutlinedButton>
             </Grid>
           </Grid>
         </Container>
