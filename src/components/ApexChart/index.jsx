@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import { useQuery } from "react-query";
-import { fetchHistoricalData } from "../../api/crypto_compare/historicalData";
+import { fetchHistoricalData } from "../../api/crypto_compare_apis";
 
 const InitialOptions = {
   grid: {
@@ -32,12 +32,12 @@ const InitialOptions = {
     sparkline: {
       enabled: true,
     },
-    type: "line",
+    type: 'line',
   },
 
   stroke: {
     width: 5,
-    curve: "smooth",
+    curve: 'smooth',
   },
 
   xaxis: {
@@ -57,13 +57,13 @@ const InitialOptions = {
     },
   },
   fill: {
-    type: "gradient",
+    type: 'gradient',
     // colors: ["#4B24DC"],
     gradient: {
-      shade: "light",
+      shade: 'light',
       // gradientToColors: ["#ECB533"],
       shadeIntensity: 1,
-      type: "horizontal",
+      type: 'horizontal',
       opacityFrom: 0,
       opacityTo: 1,
       // colorStops: [
@@ -93,9 +93,7 @@ const ApexChart = () => {
   const [dayChange, setDayChange] = useState(0);
   const [options, setOptions] = useState(InitialOptions);
 
-  const { isLoading, error, data, isFetching } = useQuery("prices", () =>
-    fetchHistoricalData("AVAX", 24)
-  );
+  const { isLoading, error, data, isFetching } = useQuery('prices', () => fetchHistoricalData('AVAX', 24));
 
   useEffect(() => {
     const prices = data?.Data?.Data;
@@ -115,12 +113,11 @@ const ApexChart = () => {
   useEffect(() => {
     const newOptions = { ...InitialOptions };
     console.log(dayChange);
-    let color =
-      dayChange === 0 ? "#ECB533" : dayChange === 1 ? "#48BB78" : "#DE383D";
+    let color = dayChange === 0 ? '#ECB533' : dayChange === 1 ? '#48BB78' : '#DE383D';
     newOptions.fill.gradient.colorStops = [
       {
         offset: 0,
-        color: "#4B24DC",
+        color: '#4B24DC',
         opacity: 0.1,
       },
       {
@@ -133,13 +130,7 @@ const ApexChart = () => {
   }, [dayChange]);
 
   if (isLoading || isFetching) return null;
-  return (
-    <Chart
-      options={options}
-      series={[{ name: "Price", data: series }]}
-      height="100%"
-    />
-  );
+  return <Chart options={options} series={[{ name: 'Price', data: series }]} height="100%" />;
 };
 
 export default ApexChart;
