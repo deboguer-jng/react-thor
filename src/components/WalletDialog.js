@@ -10,9 +10,9 @@ import {
   TextField,
   CircularProgress,
   Tooltip,
-} from '@material-ui/core';
+} from '@mui/material';
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
-import { ClearOutlined, LinkOffOutlined } from '@material-ui/icons';
+import { ClearOutlined, LinkOffOutlined } from '@mui/icons-material';
 import { useWeb3React } from '@web3-react/core';
 
 import { useStyles } from '../theme/styles/components/walletDialogStyles';
@@ -37,7 +37,7 @@ const WalletDialog = ({ open, setOpen, address, items = [], activate = () => {} 
     setOpen(false);
   }, [setOpen]);
 
-  const handleDisconnect = connector => {
+  const handleDisconnect = (connector) => {
     deactivate();
     localStorage.removeItem('jwt');
     connector instanceof WalletConnectConnector && localStorage.removeItem('walletconnect');
@@ -45,9 +45,9 @@ const WalletDialog = ({ open, setOpen, address, items = [], activate = () => {} 
 
   return (
     <MuiDialog open={open} onClose={onClose} PaperProps={{ className: classes.dialogPaper }}>
-      <Container maxWidth='xs' className={classes.dialog}>
+      <Container maxWidth="xs" className={classes.dialog}>
         <Box className={classes.closeBtnContainer}>
-          <Typography variant='body1' className={classes.dialogHeading}>
+          <Typography variant="body1" className={classes.dialogHeading}>
             {web3context && web3context.active ? 'CHANGE WALLET' : 'CONNECT TO A WALLET'}
 
             <br />
@@ -55,14 +55,14 @@ const WalletDialog = ({ open, setOpen, address, items = [], activate = () => {} 
               <span className={classes.secondaryHeading}>{`CONNECTED TO ${address}`}</span>
             ) : null}
           </Typography>
-          <IconButton size='small' onClick={onClose} className={classes.closeIcon}>
+          <IconButton size="small" onClick={onClose} className={classes.closeIcon}>
             <ClearOutlined />
           </IconButton>
         </Box>
 
         <Box className={classes.closeBtnContainer}>
           <TextField
-            placeholder='SEARCH'
+            placeholder="SEARCH"
             className={classes.textField}
             fullWidth
             value={search}
@@ -70,7 +70,7 @@ const WalletDialog = ({ open, setOpen, address, items = [], activate = () => {} 
             InputProps={{ disableUnderline: true }}
           />
           {search ? (
-            <IconButton size='small' onClick={() => setSearch('')} className={classes.clearSearch}>
+            <IconButton size="small" onClick={() => setSearch('')} className={classes.clearSearch}>
               <ClearOutlined />
             </IconButton>
           ) : null}
@@ -86,22 +86,17 @@ const WalletDialog = ({ open, setOpen, address, items = [], activate = () => {} 
                   activate(connector, onClose);
                 }}
                 className={
-                  !(web3context?.connector instanceof connectorType)
-                    ? classes.listItem
-                    : classes.selectedListItem
+                  !(web3context?.connector instanceof connectorType) ? classes.listItem : classes.selectedListItem
                 }
               >
-                <Typography variant='body1' className={classes.listItemText}>
+                <Typography variant="body1" className={classes.listItemText}>
                   {loading.walletConnection && loading.connector === connector ? (
-                    <CircularProgress size={12} color='inherit' className={classes.loadingIcon} />
+                    <CircularProgress size={12} color="inherit" className={classes.loadingIcon} />
                   ) : null}
-                  <img src={logo} alt={name} srcSet='' width={20} style={{ marginRight: 5 }} />
+                  <img src={logo} alt={name} srcSet="" width={20} style={{ marginRight: 5 }} />
                   {name}
                   {web3context?.connector instanceof connectorType ? (
-                    <Tooltip
-                      title='Disconnect'
-                      onClick={() => handleDisconnect(web3context?.connector)}
-                    >
+                    <Tooltip title="Disconnect" onClick={() => handleDisconnect(web3context?.connector)}>
                       <LinkOffOutlined className={classes.disconnect} />
                     </Tooltip>
                   ) : null}
@@ -110,7 +105,7 @@ const WalletDialog = ({ open, setOpen, address, items = [], activate = () => {} 
             ))}
           </List>
         ) : (
-          <Typography variant='body1' className={classes.secondaryText}>
+          <Typography variant="body1" className={classes.secondaryText}>
             NOTHING TO SHOW
           </Typography>
         )}

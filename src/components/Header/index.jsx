@@ -37,7 +37,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { storeWeb3Context } from '../../redux';
 
 const Header = () => {
-  const classes = useStyles();
   const web3context = useWeb3React();
   const dispatch = useDispatch();
   const web3contextRedux = useSelector((state) => state.web3.web3context);
@@ -363,13 +362,15 @@ const Header = () => {
           >
             34.712 THOR | 34.712 AVAX
           </Button>
-          <Button sx={{ fontSize: '12px', fontFamily: 'Kanit', color: 'white' }} onClick={() => setOpen(true)}>
+          <Button
+            sx={{ fontSize: '12px', fontFamily: 'Kanit', color: 'white', flexGrow: 1 }}
+            onClick={() => setOpen(true)}
+          >
             {web3context.active && web3context.account ? conciseAddress(web3context.account) : 'CONNECT WALLET'}
           </Button>
         </Box>
       </Box>
       <WalletDialog
-        className={classes.connectWalletButton}
         open={open}
         setOpen={setOpen}
         items={walletList}

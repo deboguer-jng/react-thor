@@ -1,6 +1,6 @@
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(theme => ({
+export const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1, 0),
     fontWeight: '600',

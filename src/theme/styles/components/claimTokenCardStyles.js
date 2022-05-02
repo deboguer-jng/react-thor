@@ -1,6 +1,6 @@
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(theme => ({
+export const useStyles = makeStyles((theme) => ({
   mainContainer: {
     height: '70px',
     margin: theme.spacing(1, 0),

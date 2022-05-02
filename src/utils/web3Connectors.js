@@ -90,24 +90,6 @@ export const desktopWalletList = [
     connectorType: WalletConnectConnector,
     logo: walletconnectLogo,
   },
-  {
-    name: 'Coinbase',
-    connector: walletlink,
-    connectorType: WalletLinkConnector,
-    logo: coinbaseLogo,
-  },
-  {
-    name: 'Fortmatic',
-    connector: fortmatic,
-    connectorType: FortmaticConnector,
-    logo: fortmaticLogo,
-  },
-  {
-    name: 'Portis',
-    connector: portis,
-    connectorType: PortisConnector,
-    logo: portisLogo,
-  },
 ];
 
 export const mobileWalletList = [
