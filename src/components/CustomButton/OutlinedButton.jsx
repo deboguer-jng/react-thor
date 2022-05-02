@@ -2,10 +2,11 @@ import React from 'react';
 
 import { Button } from '@mui/material';
 
-const OutlinedButton = ({ label, fontSize, paddingHorizontal, paddingVertical, fullWidth, width }) => {
+const OutlinedButton = ({ children, fontSize, paddingHorizontal, paddingVertical, fullWidth, width, ...props }) => {
   return (
     <Button
       fullWidth={fullWidth}
+      {...props}
       sx={{
         borderRadius: '25px',
         fontFamily: 'Kanit',
@@ -27,7 +28,7 @@ const OutlinedButton = ({ label, fontSize, paddingHorizontal, paddingVertical, f
       size="small"
       variant="outlined"
     >
-      {label}
+      {children}
     </Button>
   );
 };
