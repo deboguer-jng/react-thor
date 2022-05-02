@@ -1,6 +1,6 @@
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(theme => ({
+export const useStyles = makeStyles((theme) => ({
   accordian: {
     margin: theme.spacing(2, 0),
     '& .MuiIconButton-edgeEnd': {

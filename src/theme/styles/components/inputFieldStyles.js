@@ -1,6 +1,6 @@
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(theme => ({
+export const useStyles = makeStyles((theme) => ({
   inputField: {
     backgroundColor: theme.palette.background.input,
     border: `1px solid ${theme.palette.primary.main}`,

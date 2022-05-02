@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { Web3ReactProvider } from '@web3-react/core';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from '@mui/material/styles';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 

@@ -1,6 +1,6 @@
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(theme => ({
+export const useStyles = makeStyles((theme) => ({
   mainContainer: {
     display: 'flex',
     flexDirection: 'column',
@@ -15,12 +15,10 @@ export const useStyles = makeStyles(theme => ({
     position: 'relative',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    backgroundImage:
-      'radial-gradient(50% 50% at 50% 50%, rgba(149, 255, 133, 0.2) 0%, rgba(255, 255, 255, 0) 100%)',
+    backgroundImage: 'radial-gradient(50% 50% at 50% 50%, rgba(149, 255, 133, 0.2) 0%, rgba(255, 255, 255, 0) 100%)',
   },
   lightMainBox: {
-    backgroundImage:
-      'radial-gradient(50% 50% at 50% 50%, rgba(149, 255, 133, 0.3) 0%, rgba(255, 255, 255, 0) 100%)',
+    backgroundImage: 'radial-gradient(50% 50% at 50% 50%, rgba(149, 255, 133, 0.3) 0%, rgba(255, 255, 255, 0) 100%)',
   },
 
   container: {
