@@ -10,20 +10,19 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-} from "@mui/material";
-import { useQuery } from "react-query";
+} from '@mui/material';
+import { useQuery } from 'react-query';
 
-import { investments } from "../../utils/constants";
-import { formatter } from "../../utils/utils";
-import imgAvax from "../../assets/images/avax.png";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import { investments } from '../../utils/constants';
+import { formatter } from '../../utils/utils';
+import { BsThreeDotsVertical } from 'react-icons/bs';
 
-import { MdOutlineArrowDropDown, MdOutlineArrowDropUp } from "react-icons/md";
+import { MdOutlineArrowDropDown, MdOutlineArrowDropUp } from 'react-icons/md';
 
 import ScrollArea from 'react-scrollbar';
 
-import useWindowsDimension from "../../dimension";
-import { fetchSingleSymbolPrice } from "../../api/crypto_compare_apis";
+import useWindowsDimension from '../../dimension';
+import { fetchSingleSymbolPrice } from '../../api/crypto_compare_apis';
 
 const Investment = ({ investment }) => {
   const { width } = useWindowsDimension();
@@ -32,29 +31,32 @@ const Investment = ({ investment }) => {
     () => fetchSingleSymbolPrice(investment.coin),
     {
       refetchOnWindowFocus: false,
-    }
+    },
   );
 
   return (
     <TableRow>
       <TableCell>
-        <Box display={"flex"} alignItems="center">
+        <Box display={'flex'} alignItems="center">
           <Box>
             <img
-              src={imgAvax}
-              width={width > 700 ? "40px" : "24px"}
-              height={width > 700 ? "40px" : "24px"}
+              src={investment.icon}
+              width={width > 700 ? '40px' : '24px'}
+              height={width > 700 ? '40px' : '24px'}
+              style={{
+                borderRadius: '50%',
+              }}
               alt="AVAX"
             />
           </Box>
-          <Box marginLeft={"10px"}>
+          <Box marginLeft={'10px'}>
             <Typography
               component="div"
               sx={{
-                color: "white",
-                fontFamily: "Kanit",
+                color: 'white',
+                fontFamily: 'Kanit',
                 fontWeight: 500,
-                fontSize: width > 700 ? "16px" : "10px",
+                fontSize: width > 700 ? '16px' : '10px',
               }}
             >
               {investment.protocol}
@@ -63,10 +65,10 @@ const Investment = ({ investment }) => {
               // variant="subtitle1"
               component="div"
               sx={{
-                color: "white",
-                fontFamily: "Kanit",
+                color: 'white',
+                fontFamily: 'Kanit',
                 fontWeight: 300,
-                fontSize: width > 700 ? "14px" : "12px",
+                fontSize: width > 700 ? '14px' : '12px',
               }}
             >
               {investment.coin}
@@ -78,19 +80,19 @@ const Investment = ({ investment }) => {
         <Typography
           component="div"
           sx={{
-            fontSize: width > 700 ? "16px" : "12px",
-            color: "white",
-            fontFamily: "Kanit",
+            fontSize: width > 700 ? '16px' : '12px',
+            color: 'white',
+            fontFamily: 'Kanit',
             fontWeight: 300,
           }}
         >
-          {isLoading || isFetching ? "-" : formatter.format(data.USD)}
+          {isLoading || isFetching ? '-' : formatter.format(data.USD)}
         </Typography>
       </TableCell>
       <TableCell>
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {isLoading || isFetching ? (
-            "-"
+            '-'
           ) : (
             <>
               {data.USD > investment.initialValue ? (
@@ -101,16 +103,13 @@ const Investment = ({ investment }) => {
               <Typography
                 component="div"
                 sx={{
-                  color: "white",
-                  fontFamily: "Kanit",
+                  color: 'white',
+                  fontFamily: 'Kanit',
                   fontWeight: 300,
-                  fontSize: width > 700 ? "16px" : "12px",
+                  fontSize: width > 700 ? '16px' : '12px',
                 }}
               >
-                {Math.abs(
-                  (data.USD / investment.initialValue) * 100 - 100
-                ).toLocaleString()}
-                %
+                {Math.abs((data.USD / investment.initialValue) * 100 - 100).toLocaleString()}%
               </Typography>
             </>
           )}
@@ -118,21 +117,19 @@ const Investment = ({ investment }) => {
       </TableCell>
       <TableCell>
         {isLoading || isFetching ? (
-          "-"
+          '-'
         ) : (
           <Typography
             component="div"
             sx={{
-              color: data.USD > investment.initialValue ? "#48BB78" : "#ff4d4e",
-              fontFamily: "Kanit",
+              color: data.USD > investment.initialValue ? '#48BB78' : '#ff4d4e',
+              fontFamily: 'Kanit',
               fontWeight: 300,
-              fontSize: width > 700 ? "16px" : "12px",
+              fontSize: width > 700 ? '16px' : '12px',
             }}
           >
             {formatter.format(
-              (data.USD / investment.initialValue) *
-                investment.investmentAmount -
-                investment.investmentAmount
+              (data.USD / investment.initialValue) * investment.investmentAmount - investment.investmentAmount,
             )}
           </Typography>
         )}
@@ -141,27 +138,25 @@ const Investment = ({ investment }) => {
         <Typography
           component="div"
           sx={{
-            color: "white",
-            fontFamily: "Kanit",
+            color: 'white',
+            fontFamily: 'Kanit',
             fontWeight: 300,
-            fontSize: width > 700 ? "16px" : "12px",
+            fontSize: width > 700 ? '16px' : '12px',
           }}
         >
-          {(
-            investment.investmentAmount / investment.initialValue
-          ).toLocaleString()}
+          {(investment.investmentAmount / investment.initialValue).toLocaleString()}
         </Typography>
       </TableCell>
       <TableCell>
-        <Box display={"flex"} alignItems="center">
+        <Box display={'flex'} alignItems="center">
           <Box>
             <Typography
               component="div"
               sx={{
-                color: "white",
-                fontFamily: "Kanit",
+                color: 'white',
+                fontFamily: 'Kanit',
                 fontWeight: 300,
-                fontSize: width > 700 ? "16px" : "12px",
+                fontSize: width > 700 ? '16px' : '12px',
               }}
             >
               {formatter.format(investment.investmentAmount)}
@@ -169,7 +164,7 @@ const Investment = ({ investment }) => {
           </Box>
 
           <Box marginLeft={6}>
-            <IconButton aria-label="dots" sx={{ color: "white" }}>
+            <IconButton aria-label="dots" sx={{ color: 'white' }}>
               <BsThreeDotsVertical />
             </IconButton>
           </Box>
